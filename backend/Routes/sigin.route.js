@@ -109,8 +109,8 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure:false,
     auth: {
-        user: 'lawlink.legal.services@gmail.com',
-        pass: 'qzroppedvawxedzh'
+        user: 'law.connect.verify@gmail.com',
+        pass: 'Aa1Bb2Cc3Dd4'
     }
 });
 

@@ -1,9 +1,4 @@
-const express=require("express");
 
-const{connection}=require("./config/mongo")
-
-const {lawyerRouter}=require("./Routes/lawyer.router")
-const cors=require("cors")
 
 
 
@@ -28,3 +23,11 @@ app.listen(port,async(req,res)=>{
         console.log(error.message)
     }
 })
+=======
+
+
+
+app.use("/user",signinRoute);
+
+
+

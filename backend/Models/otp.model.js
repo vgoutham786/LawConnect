@@ -10,6 +10,6 @@ const otpSchema=mongoose.Schema({
     expireAt:Date
 })
 
-const UserOTP=mongoose.model("OTPverification",otpSchema);
+const UserOTP=mongoose.model("OTP",otpSchema);
 
 module.exports={UserOTP}

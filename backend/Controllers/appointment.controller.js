@@ -1,8 +1,5 @@
 const AppointmentModel = require('../Models/appointment.model')
 
-
-
-
 const getAll = async(req,res) => {
   try{
     const data = await AppointmentModel.find()

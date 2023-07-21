@@ -8,9 +8,7 @@ const signinRoute=express.Router();
 const path=require('path')
 const otpverify=require("../Middleware/otp.middleware");
 const { UserOTP } = require('../Models/otp.model');
-const {BlacklistingModel}=require('../Models/blacklist.model')
-
-
+const {LawyerModel}=require('../Models/lawyer.model')
 
 
 signinRoute.post("/register",async(req,res)=>{
@@ -84,7 +82,7 @@ signinRoute.post("/verifyotp",otpverify, async(req,res)=>{
     const databaseotp=await UserOTP.find({Useremail});
      try {
         //if(databaseotp.length>0){
-            console.log("otp",otp)   
+            console.log("otp",otp)
        if(otp==databaseotp[0].otp){
         await UserModel.findByIdAndUpdate(user[0]._id, { verify: true });
         await UserOTP.deleteMany({Useremail});
@@ -97,8 +95,58 @@ signinRoute.post("/verifyotp",otpverify, async(req,res)=>{
      }   
 })
 
-////////////
-///////////
+signinRoute.post("/forgot-password",async(req,res)=>{
+    let {email}=req.body;
+    let user=await UserModel.find({email});
+
+    if(user.length===0){
+        res.status(200).send({msg:"user not exist !"})
+    }else{
+        let token=jwt.sign({'userID':user[0]._id},'masai',{ expiresIn:15*60 });
+       let link=`http://127.0.0.1:8080/user/reset/${user[0]._id}/${token}`
+       sendemailrestlink(email,link);
+       res.status(200).send({msg:"link to reset password has been sent to your registered email !"})
+    }
+});
+
+signinRoute.get("/reset/:userid/:token",async(req,res)=>{
+    
+    res.sendFile(path.join(__dirname,'../../Frontend/passwordPage/passreset.html'))
+   
+})
+
+signinRoute.patch("/reset/:userid/:token",async(req,res)=>{
+    const {userid,token}=req.params;
+    const {confirmpassword,password}=req.body
+    //console.log(jwt.verify(token,'masai'))
+    try {
+        if(jwt.verify(token,'masai')){
+            if(password===confirmpassword){
+                const salt = bcrypt.genSaltSync(5);
+            const hash = bcrypt.hashSync(confirmpassword, salt);
+            await UserModel.findByIdAndUpdate({_id:userid},{password:hash});
+            res.status(200).send({msg:"new password updated !"})
+            }else{
+                res.status(200).send({msg:"confirm password should match new password !" })
+            }
+        }  else{
+            res.status(400).send({msg:"link expired request for new !" })
+        }
+        
+        
+    } catch (error) {
+        res.status(404).send({msg:"link expired request for new !"});
+    }
+    
+})
+signinRoute.post("/logout",async (req,res)=>{
+     let token=req.headers.authorization.split(" ")[1];
+    
+     let blacklisttoken=await new BlacklistingModel({btoken:token});
+     blacklisttoken.save();
+     res.status(200).send({msg:"you are logedout!"})
+});
+
 signinRoute.post("/lawyer-login",async(req,res)=>{
     const {email,password}=req.body;
     let user=await LawyerModel.find({email:email})  ;
@@ -116,20 +164,6 @@ signinRoute.post("/lawyer-login",async(req,res)=>{
         res.status(404).send({msg:"Network Error !"});
     }
 })
-///////////
-//////////
-
-///////////////////////////
-signinRoute.post("/logout",async (req,res)=>{
-    let token=req.headers.authorization.split(" ")[1];
-   
-    let blacklisttoken=await new BlacklistingModel({btoken:token});
-    blacklisttoken.save();
-    res.status(200).send({msg:"you are logedout!"})
-});
-
-
-/////////////////////////
 const transporter = nodemailer.createTransport({
     service:'gmail',
     host: 'smtp.gmail.email',

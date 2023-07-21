@@ -8,7 +8,7 @@ const signinRoute=express.Router();
 const path=require('path')
 const otpverify=require("../Middleware/otp.middleware");
 const { UserOTP } = require('../Models/otp.model');
-
+const {BlacklistingModel}=require('../Models/blacklist.model')
 
 
 
@@ -84,7 +84,7 @@ signinRoute.post("/verifyotp",otpverify, async(req,res)=>{
     const databaseotp=await UserOTP.find({Useremail});
      try {
         //if(databaseotp.length>0){
-            console.log("otp",otp)
+            console.log("otp",otp)   
        if(otp==databaseotp[0].otp){
         await UserModel.findByIdAndUpdate(user[0]._id, { verify: true });
         await UserOTP.deleteMany({Useremail});
@@ -97,9 +97,36 @@ signinRoute.post("/verifyotp",otpverify, async(req,res)=>{
      }   
 })
 
+////////////
+///////////
+signinRoute.post("/lawyer-login",async(req,res)=>{
+    const {email,password}=req.body;
+    let user=await LawyerModel.find({email:email})  ;
+    try {
+        if(user.length>0){
+            if(password===user[0].password){
+                res.status(200).send({msg:"Login sucessfull !",Name:user[0].name,userData:user[0]});
+            }else{
+                res.status(200).send({msg:"wrong credentials !"});
+            }
+        }else{
+            res.status(404).send({msg:"user doesn't exist !"})
+        }
+    } catch (error) {
+        res.status(404).send({msg:"Network Error !"});
+    }
+})
+///////////
+//////////
 
-
-
+///////////////////////////
+signinRoute.post("/logout",async (req,res)=>{
+    let token=req.headers.authorization.split(" ")[1];
+   
+    let blacklisttoken=await new BlacklistingModel({btoken:token});
+    blacklisttoken.save();
+    res.status(200).send({msg:"you are logedout!"})
+});
 
 
 /////////////////////////

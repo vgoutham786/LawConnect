@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lawyer Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Lato&family=Libre+Franklin&family=Montserrat&family=Noto+Sans&family=Playfair+Display&family=Roboto&family=Rubik&family=Varela+Round&family=Work+Sans&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* font-family: "Lato", sans-serif; */
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+    :root {
+      --baseColor: rgb(53, 240, 243);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .nav-item a:hover {
+      color: var(--baseColor);
+    }
+
+    .nav-item a {
+      /* color: #fff; */
+      font-size: 20px;
+    }
+
+    #login_signup {
+      /* display: none; */
+    }
+
+    #login_signup a {
+      background-color: var(--baseColor);
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: 0.3s;
+      color: #000000;
+    }
+
+    #login_signup a:hover {
+      background-color: #787878;
+      /* color: rgb(53, 240, 243); */
+      color: #fff;
+    }
+
+    #loged_in_user {
+      display: none;
+      width: 150px;
+      /* height: 0px; */
+      color: #fff;
+      font-size: 20px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 0px;
+    }
+
+    #loged_in_user i {
+      cursor: pointer;
+    }
+
+    /* ******************************** */
+    .main_chat_container {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      height: 0px;
+      /* display: flex; */
+      justify-content: flex-end;
+      align-items: flex-end;
+      display: none;
+      /* z-index: -1; */
+      /* border: 1px solid rgb(55, 0, 255); */
+    }
+
+    .main_chat_container>div {
+      width: 50vw;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      /* border: 1px solid rgb(4, 161, 64); */
+    }
+
+    .main_chat_container section {
+      position: relative;
+      /* border: 2px solid blue; */
+      z-index: 999;
+    }
+
+    .message_container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .chat_section {
+      /* border: 1px solid red; */
+      display: none;
+      width: 50%;
+    }
+
+    .chat_section>div>div>div {
+      /* border: 1px solid red; */
+      height: 100%;
+      width: 100%;
+    }
+
+    .message_container .box {
+      width: 25vw;
+      height: 50vh;
+      padding: 6px 10px;
+      border: 1px solid red;
+    }
+
+    .message_container .chat_box {
+      width: 100%;
+      height: 90%;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      /* border: 1px solid lime; */
+    }
+
+    .message_container .chat_box .lawyer {
+      background-color: grey;
+      color: #ffff;
+    }
+
+    .message_container .chat_box .user {
+      background-color: rgba(0, 255, 0, 0.475);
+      align-self: flex-end;
+      margin: 3px 0;
+      font-size: 18px;
+      min-width: 20px;
+      max-width: 90%;
+      padding: 6px;
+      border-radius: 10px 0 10px 10px;
+    }
+
+    .message_container .chat_box p {
+      padding: 4px;
+      margin-bottom: 6px;
+      max-width: 90%;
+    }
+
+    .allChatsContainer {
+      /* position: relative;
+        z-index: 999; */
+      /* border: 2px solid blue; */
+      width: 24vw;
+      max-height: 60vh;
+    }
+
+    .allChatsContainer #myLawyers {
+      background-color: #fff;
+      border-radius: 0 0 15px 15px;
+      border: 1px solid;
+      /* height: 50vh; */
+      height: 0px;
+      /* display: none; */
+      overflow-y: auto;
+      transition: 0.3s;
+    }
+
+    .item {
+      height: 50px;
+      display: flex;
+    }
+
+    .item .itemText {
+      line-height: 5px;
+      padding: 10px;
+    }
+
+    .lastMessage {
+      font-size: 12px;
+      color: #707070;
+    }
+
+    /* ******************************** */
+
+
+    .Dashboard {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: lighter;
+    }
+
+
+    #second-div {
+      width: 80%;
+      height: auto;
+      margin: auto;
+      margin-top: 3%;
+      display: flex;
+      gap: 50px;
+    }
+
+    #img {
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    #data {
+      margin-left: 15%;
+      text-align: center;
+    }
+
+    #data>h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 50px;
+    }
+
+    .p {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 25px;
+    }
+
+    #booking {
+      width: 400px;
+      height: 60px;
+      border: 0px;
+      border-radius: 10px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 20px;
+      background-color: rgb(69, 233, 233);
+    }
+
+    #booking:hover {
+      cursor: pointer;
+      background-color: rgb(14, 229, 229);
+
+    }
+
+
+    /* **************POPUP */
+
+    .slots_section {
+      width: 100vw;
+      height: 100vh;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      backdrop-filter: blur(2px);
+      background-color: #6767679a;
+      display: none;
+    }
+
+    .slots_section .container {
+      width: 40vw;
+      height: 90vh;
+      padding: 10px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      background-color: #fff;
+    }
+
+    .slots_section .container .filter {
+      margin-bottom: 20px;
+    }
+
+    .card {
+      /* border: 1px solid #ccc; */
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .slot-container {
+      display: flex;
+      flex-wrap: wrap;
+      /* border: 1px solid; */
+      width: 40vw;
+    }
+
+    .slot {
+      cursor: pointer;
+      padding: 5px;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+    }
+
+    .slot.expired {
+      background-color: red;
+      color: white;
+      cursor: not-allowed;
+    }
+
+    .filter span {
+      margin: 0 12px;
+    }
+
+    /* #slot-day-2, #slot-day-3{
+        display: none;
+    } */
+    .available {
+      background-color: var(--baseColor);
+      color: transparent;
+    }
+
+    .booked {
+      background-color: red;
+      color: transparent;
+    }
+
+    .slot {
+      background-color: var(--baseColor);
+      transition: 0.3s;
+    }
+
+    .slot:hover {
+      background-color: rgb(115, 0, 255);
+    }
+
+    #close_slots {
+      color: #fff;
+      cursor: pointer;
+      position: absolute;
+      top: -20px;
+      right: -30px;
+      border-radius: 50%;
+      background-color: red;
+      padding: 4px;
+    }
+
+    #confirm_bookSlot {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    #confirm_bookSlot input,
+    #confirm_bookSlot textarea,
+    #confirm_bookSlot select {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border-radius: 4px;
+      /* border: none; */
+      outline: none;
+    }
+
+    #confirm_bookSlot .confirm_bookSlot_container {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+          <img src="../AdminPage/image/logo-lawlink-removebg-preview.png" height="40" alt="Lwlink Logo"
+            loading="lazy" />
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./appointment.html">OUR FIRM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">PRACTICE AREAS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">PAY BILL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">LOCATIONS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./appointment.html">CONTACT</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!-- Icon -->
+
+        <!-- Notifications -->
+        <div class="dropdown" id="login_signup">
+          <a href="../passwordPage/login.html" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+            aria-expanded="false">
+            Login / SignUp
+          </a>
+        </div>
+        <div id="loged_in_user" style="display: none; color: rgb(53, 240, 243); ">
+          <a href="../Dashboard.html">
+            <div id="loged_in_name" style="cursor: pointer;"></div>
+          </a>
+          <!-- <i class="fa-solid fa-bell fa-shake fa-xl"></i> -->
+          <i class="fa-solid fa-right-from-bracket" onclick="logout()"></i>
+        </div>
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a class="d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button"
+            data-mdb-toggle="dropdown" aria-expanded="false">
+          </a>
+        </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+
+  <section class="slots_section" id="slot_popup">
+    <div class="container">
+      <div class="filter" style="position: relative; width: 100%">
+        <span><span class="available">A..</span>Slots Available</span>
+        <span><span class="booked">A..</span>Slots Filled</span>
+        <span id="close_slots" onclick="closeSlots()"><i class="fa-solid fa-xmark fa-xl"></i></span>
+      </div>
+      <div class="card_container">
+        <div class="card">
+          <h2>Available Time Slots on : <span id="current_slot"></span></h2>
+          <div id="slot-day-1" class="slot-container">
+            <div class="slot" id="slot1" data-slot="1" onclick="selectSlot(this)">
+              09:00 AM
+            </div>
+            <div class="slot" id="slot2" data-slot="2" onclick="selectSlot(this)">
+              10:00 AM
+            </div>
+            <div class="slot" id="slot3" data-slot="3" onclick="selectSlot(this)">
+              11:00 PM
+            </div>
+            <div class="slot" id="slot4" data-slot="4" onclick="selectSlot(this)">
+              02:00 PM
+            </div>
+            <div class="slot" id="slot5" data-slot="5" onclick="selectSlot(this)">
+              03:00 PM
+            </div>
+            <div class="slot" id="slot6" data-slot="6" onclick="selectSlot(this)">
+              05:00 PM
+            </div>
+            <div class="slot" id="slot7" data-slot="7" onclick="selectSlot(this)">
+              06:00 PM
+            </div>
+            <div class="slot" id="slot8" data-slot="8" onclick="selectSlot(this)">
+              07:00 PM
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Available Time Slots on : <span id="current_slot2"></span></h2>
+          <div id="slot-day-2" class="slot-container">
+            <div class="slot" id="slot9" data-slot="9" onclick="selectSlot(this)">
+              09:00 AM
+            </div>
+            <div class="slot" id="slot10" data-slot="10" onclick="selectSlot(this)">
+              10:00 AM
+            </div>
+            <div class="slot" id="slot11" data-slot="11" onclick="selectSlot(this)">
+              11:00 PM
+            </div>
+            <div class="slot" id="slot12" data-slot="12" onclick="selectSlot(this)">
+              02:00 PM
+            </div>
+            <div class="slot" id="slot13" data-slot="13" onclick="selectSlot(this)">
+              03:00 PM
+            </div>
+            <div class="slot" id="slot14" data-slot="14" onclick="selectSlot(this)">
+              05:00 PM
+            </div>
+            <div class="slot" id="slot15" data-slot="15" onclick="selectSlot(this)">
+              06:00 PM
+            </div>
+            <div class="slot" id="slot16" data-slot="16" onclick="selectSlot(this)">
+              07:00 PM
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Available Time Slots on : <span id="current_slot3"></span></h2>
+          <div id="slot-day-3" class="slot-container">
+            <div class="slot" id="slot17" data-slot="17" onclick="selectSlot(this)">
+              09:00 AM
+            </div>
+            <div class="slot" id="slot18" data-slot="18" onclick="selectSlot(this)">
+              10:00 AM
+            </div>
+            <div class="slot" id="slot19" data-slot="19" onclick="selectSlot(this)">
+              11:00 PM
+            </div>
+            <div class="slot" id="slot20" data-slot="20" onclick="selectSlot(this)">
+              02:00 PM
+            </div>
+            <div class="slot" id="slot21" data-slot="21" onclick="selectSlot(this)">
+              03:00 PM
+            </div>
+            <div class="slot" id="slot22" data-slot="22" onclick="selectSlot(this)">
+              05:00 PM
+            </div>
+            <div class="slot" id="slot23" data-slot="23" onclick="selectSlot(this)">
+              06:00 PM
+            </div>
+            <div class="slot" id="slot24" data-slot="24" onclick="selectSlot(this)">
+              07:00 PM
+            </div>
+          </div>
+        </div>
+        <button onclick="confirm_appointment()">Confirm Appointment</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- first poput -->
+  <section class="slots_section" id="form_popup">
+    <div class="container">
+      <div class="filter" style="position: relative; width: 100%">
+        <span id="close_slots" onclick="closeForm()"><i class="fa-solid fa-xmark fa-xl"></i></span>
+      </div>
+      <div class="card_container confirm_bookSlot_container">
+        <form id="confirm_bookSlot">
+          <h1>Client Details</h1>
+          <input type="text" id="input_user_name" />
+          <input type="email" id="input_user_email" />
+          <input type="number" placeholder="Phone Number" id="user_phone" />
+          <textarea name="" id="user_summary" cols="30" rows="3" placeholder="Case Summary"></textarea>
+          <select id="appointment_type">
+            <option value="Personal">Personal</option>
+            <option value="Virtual">Virtual</option>
+          </select>
+          <button type="submit">Book Slot</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <div id="main">
+    <div id="second-div">
+      <div id="image">
+        <img id="img" src="https://www.latest-hairstyles.com/wp-content/uploads/professional-hairstyles-1.jpg"
+          alt="Lawyer Image">
+      </div>
+      <div id="data">
+        <h1 id="name">Lawyer Name</h1> <br>
+        <p class="p" id="bio">Bio</p> <br>
+        <p class="p" id="experience">Experience</p> <br>
+        <p class="p" id="price">Price</p> <br>
+        <p class="p" id="address">Address</p> <br>
+        <p class="p" id="email">email</p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+        <button id="booking" onclick="openForm()">Book An Appointment</button>
+        <!-- <button >Open</button> -->
+      </div>
+    </div>
+    <div>
+
+    </div>
+  </div>
+
+
+
+  <!-- chat box starts form herer -->
+
+  <div class="main_chat_container" id="main_chat_container">
+    <div>
+      <section style="" class="chat_section" id="chat_section">
+        <div class="container" style="height: 100%">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-4">
+              <div class="card" id="chat1" style="border-radius: 15px">
+                <div
+                  class="card-header d-flex justify-content-between align-items-center bg-info text-white border-bottom-0"
+                  style="
+                        border-top-left-radius: 15px;
+                        border-top-right-radius: 15px;
+                      ">
+                  <!-- <i class="fas fa-angle-left"></i> -->
+                  <p class="mb-0 fw-bold">Live chat</p>
+                  <i class="fas fa-times" onclick="closeChatBox()" style="cursor: pointer;"></i>
+                </div>
+                <div class="card-body">
+                  <div id="chat_box" style="
+                          max-height: 300px;
+                          overflow-y: auto;
+                          padding-right: 10px;
+                        "></div>
+
+                  <div class="form-outline">
+                    <form id="msg_form">
+                      <input class="form-control" id="message" placeholder="Type your message" />
+                      <!-- <textarea
+                                class="form-control"
+                                id="message"
+                                rows="2"
+                                placeholder="Type your message"
+                              ></textarea> -->
+                    </form>
+                    <!-- <i class="fa fa-duotone fa-paper-plane" onclick="sendMessage()"></i> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="allChatsContainer">
+        <div class="container">
+          <div
+            class="card-header d-flex justify-content-between align-items-center p-3 bg-info text-white border-bottom-0"
+            style="
+                  border-top-left-radius: 15px;
+                  border-top-right-radius: 15px;
+                ">
+            <!-- <i class="fas fa-angle-left"></i> -->
+            <p class="mb-0 fw-bold">Live chat</p>
+            <!-- <i class="fas fa-times"></i> -->
+            <i class="fa-brands fa-rocketchat fa-fade" onclick="toggleChats()"></i>
+          </div>
+          <div class="box" id="myLawyers">
+            <div class="item myLawyers" id="yeah" data-lawyerId="johndoe@example.com">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp" alt=""
+                style="width: 45px; height: 100%" />
+              <div class="itemText">
+                <p class="name">Joh Doe</p>
+                <p class="lastMessage">Last message .....</p>
+              </div>
+            </div>
+            <div class="item myLawyers" data-lawyerId="emilyjohnson@example.com">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp" alt=""
+                style="width: 45px; height: 100%" />
+              <div class="itemText">
+                <p class="name">Emily Johnson</p>
+                <p class="lastMessage">Last message .....</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- chat box ends here -->
+
+</body>
+
+<script>
+  let lawyerdata = JSON.parse(localStorage.getItem('Details'))
+
+  let name = document.getElementById('name')
+  name.innerText = lawyerdata.name
+  let img = document.getElementById('img')
+  img.setAttribute('src', lawyerdata.image)
+  let bio = document.getElementById('bio')
+  bio.innerText = lawyerdata.bio
+  let experience = document.getElementById('experience')
+  experience.innerText = `Experience: ${lawyerdata.experience}`
+  let price = document.getElementById('price')
+  price.innerText = `Fees: ${lawyerdata.price}`
+  let address = document.getElementById('address')
+  address.innerText = `Address: ${lawyerdata.address}`
+  let email = document.getElementById('email')
+  email.innerText = `Email: ${lawyerdata.email} `
+
+  const confirm_bookSlot = document.getElementById("confirm_bookSlot");
+  const day_1 = document.getElementById("day-1");
+  const day_2 = document.getElementById("day-2");
+  const day_3 = document.getElementById("day-3");
+  const day_1_slots = document.getElementById("slot-day-1");
+  const day_2_slots = document.getElementById("slot-day-2");
+  const day_3_slots = document.getElementById("slot-day-3");
+  const current_slot = document.getElementById("current_slot");
+  const slot1Element = document.getElementById("slot1");
+  const slot2Element = document.getElementById("slot2");
+  const slot3Element = document.getElementById("slot3");
+  const slot4Element = document.getElementById("slot4");
+  const slot5Element = document.getElementById("slot5");
+  const slot6Element = document.getElementById("slot6");
+  const slot7Element = document.getElementById("slot7");
+  const slot8Element = document.getElementById("slot8");
+  const slot9Element = document.getElementById("slot9");
+  const slot10Element = document.getElementById("slot10");
+  const slot11Element = document.getElementById("slot11");
+  const slot12Element = document.getElementById("slot12");
+  const slot13Element = document.getElementById("slot13");
+  const slot14Element = document.getElementById("slot14");
+  const slot15Element = document.getElementById("slot15");
+  const slot16Element = document.getElementById("slot16");
+  const slot17Element = document.getElementById("slot17");
+  const slot18Element = document.getElementById("slot18");
+  const slot19Element = document.getElementById("slot19");
+  const slot20Element = document.getElementById("slot20");
+  const slot21Element = document.getElementById("slot21");
+  const slot22Element = document.getElementById("slot22");
+  const slot23Element = document.getElementById("slot23");
+  const slot24Element = document.getElementById("slot24");
+  let userDetails = {}
+  const currentDateTime = new Date();
+  const year = currentDateTime.getFullYear();
+  const date = currentDateTime.getDate();
+  let month = currentDateTime.getMonth() + 1;
+  month < 10 ? (month = `0${month}`) : null;
+  let date_1 = `${year}/${month}/${date}`;
+  let date_2 = `${year}/${month}/${date + 1}`;
+  let date_3 = `${year}/${month}/${date + 2}`;
+  document.getElementById("current_slot").textContent = date_1;
+  document.getElementById("current_slot2").textContent = date_2;
+  document.getElementById("current_slot3").textContent = date_3;
+  let currentSelectSlot = false;
+  let loged_in_user_data = JSON.parse(localStorage.getItem('userData')) || false
+
+  if (loged_in_user_data) {
+    // document.getElementById("main_chat_container").style.display = "flex"
+    logedIn()
+  }
+
+  document.getElementById("input_user_name").value = "loged_in_user_data.Name"
+  document.getElementById("input_user_email").value = loged_in_user_data.email
+
+  function logedIn() {
+    document.getElementById("loged_in_name").textContent = loged_in_user_data.Name
+    document.getElementById("loged_in_user").style.display = "flex"
+    document.getElementById("login_signup").style.display = "none"
+    document.getElementById("main_chat_container").style.display = "flex"
+  }
+
+  function logout() {
+    document.getElementById("loged_in_user").style.display = "none"
+    document.getElementById("login_signup").style.display = "flex"
+    document.getElementById("main_chat_container").style.display = "none"
+    localStorage.removeItem("userData");
+  }
+
+
+  function selectSlot(data) {
+    const slotNumber = data.getAttribute("data-slot");
+    const date =
+      slotNumber <= 8 ? date_1 : slotNumber <= 16 ? date_2 : date_3;
+    currentSelectSlot = {
+      slot: data.id,
+      date,
+      slotNumber,
+    };
+  }
+
+  function confirm_appointment() {
+    if (!currentSelectSlot) {
+      return;
+    }
+
+    const post_obj = {
+      userEmail: loged_in_user_data.email,
+      lawyerEmail: lawyerdata.email,
+      slot: currentSelectSlot.slot,
+      slotNumber: currentSelectSlot.slotNumber,
+      date: currentSelectSlot.date,
+      meeting_type: userDetails.appointmentType,
+      userName: loged_in_user_data.Name,
+      lawyerName: lawyerdata.name
+    }
+
+    console.log(post_obj)
+    fetch("https://lawlink.onrender.com/appointment/", {
+      method: "POST",
+      body: JSON.stringify(post_obj),
+      headers: { "content-type": "application/json" }
+    })
+      .then(req => {
+        checkExpired()
+        location.href = "./dashboard.html"
+      })
+
+    console.log(post_obj);
+
+    // dummySlots.push(currentSelectSlot);
+    // console.log(currentSelectSlot);
+    // checkExpired();
+  }
+
+  // Check if a slot is expired (current time is past the slot time)
+  function checkExpired() {
+    const slot1Time = new Date(`${year}-${month}-${date}T09:00:00`);
+    const slot2Time = new Date(`${year}-${month}-${date}T10:00:00`);
+    const slot3Time = new Date(`${year}-${month}-${date}T11:00:00`);
+    const slot4Time = new Date(`${year}-${month}-${date}T14:00:00`);
+    const slot5Time = new Date(`${year}-${month}-${date}T15:00:00`);
+    const slot6Time = new Date(`${year}-${month}-${date}T17:00:00`);
+    const slot7Time = new Date(`${year}-${month}-${date}T18:00:00`);
+    const slot8Time = new Date(`${year}-${month}-${date}T19:00:00`);
+
+    fetch(`https://lawlink.onrender.com/appointment/lawyerEmail?email=${lawyerdata.email}`)
+      .then(req => req.json())
+      .then(res => {
+        console.log("******************");
+        console.log(res)
+        res.forEach(({ date, slot, slotNumber }) => {
+          if (
+
+            (date == date_1 && slotNumber <= 8 && slotNumber > 0) ||
+            (date == date_2 && slotNumber <= 16 && slotNumber > 8) ||
+            (date == date_3 && slotNumber <= 24 && slotNumber > 16)
+          ) {
+            let thisSlot = document.getElementById(slot);
+            thisSlot.classList.add("expired");
+            thisSlot.removeAttribute("onclick");
+          }
+        });
+      })
+
+
+    if (currentDateTime > slot1Time) {
+      slot1Element.classList.add("expired");
+      slot1Element.removeAttribute("onclick");
+    }
+
+    if (currentDateTime > slot2Time) {
+      slot2Element.classList.add("expired");
+      slot2Element.removeAttribute("onclick");
+    }
+
+    if (currentDateTime > slot3Time) {
+      slot3Element.classList.add("expired");
+      slot3Element.removeAttribute("onclick");
+    }
+
+    if (currentDateTime > slot4Time) {
+      slot4Element.classList.add("expired");
+      slot4Element.removeAttribute("onclick");
+    }
+
+    if (currentDateTime > slot5Time) {
+      slot5Element.classList.add("expired");
+      slot5Element.removeAttribute("onclick");
+    }
+
+    if (currentDateTime > slot6Time) {
+      slot6Element.classList.add("expired");
+      slot6Element.removeAttribute("onclick");
+    }
+    if (currentDateTime > slot7Time) {
+      slot7Element.classList.add("expired");
+      slot7Element.removeAttribute("onclick");
+    }
+    if (currentDateTime > slot8Time) {
+      slot8Element.classList.add("expired");
+      slot8Element.removeAttribute("onclick");
+    }
+  }
+
+  checkExpired();
+
+  function openSlots() {
+    document.getElementById("slot_popup").style.display = "flex";
+  }
+  function closeSlots() {
+    document.getElementById("slot_popup").style.display = "none";
+  }
+  function openForm() {
+    let checker = JSON.parse(localStorage.getItem("userData"))
+    if (!checker) {
+      location.href = "../passwordPage/login.html"
+    } else {
+      console.log(loged_in_user_data);
+      document.getElementById("input_user_name").value = loged_in_user_data.Name
+      document.getElementById("input_user_email").value = loged_in_user_data.email
+      document.getElementById("form_popup").style.display = "flex";
+    }
+  }
+  function closeForm() {
+    document.getElementById("form_popup").style.display = "none";
+  }
+
+  confirm_bookSlot.addEventListener("submit", (event) => {
+    event.preventDefault();
+    userDetails.userName = event.target.input_user_name.value
+    userDetails.userEmail = event.target.input_user_email.value
+    userDetails.appointmentType = event.target.appointment_type.value
+    userDetails.userPhone = event.target.user_phone.value
+    closeForm();
+    openSlots(userDetails);
+    // console.log(userDetails);
+  });
+</script>
+
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+  integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+
+<script>
+  const PORT = "https://lawlink.onrender.com"
+  const socket = io("https://lawlink.onrender.com", { transports: ["websocket"] });
+  const userChatEmail = JSON.parse(localStorage.getItem("userData")).email || false
+  let myLawyerId = "";
+  const display_box = document.getElementById("chat_box");
+  const myLawyers = document.querySelectorAll(".myLawyers");
+  const chatSection = document.getElementById("chat_section");
+  // const loged_in_user_data = JSON.parse(localStorage.getItem("userData")) || false
+  myLawyers.forEach((ele) => {
+    ele.addEventListener("click", () => {
+      myLawyerId = ele.getAttribute("data-lawyerId");
+      chatSection.style.display = "block";
+      updateChatBox(myLawyerId);
+    });
+  });
+
+  // Connect to the server
+  socket.on("connect", () => {
+    console.log("Connected to server");
+    socket.emit("registerUser", userChatEmail);
+  });
+
+  // Send a message to a lawyer
+  document
+    .getElementById("msg_form")
+    .addEventListener("submit", (event) => {
+      event.preventDefault();
+      sendMessage();
+    });
+  function sendMessage() {
+    // const lawyerId = document.getElementById('lawyerId').value;
+    const message = document.getElementById("message").value;
+
+    const chatData = `
+  <div class="p-2 me-1 border" style="border-radius: 15px; background-color: #fbfbfb;">
+              <p class="small mb-0">${message}</p>
+            </div>
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+              alt="avatar 1" style="width: 45px; height: 100%;">
+  `;
+
+    const received_msg = document.createElement("div");
+    received_msg.setAttribute(
+      "class",
+      "d-flex flex-row justify-content-end mb-4"
+    );
+    received_msg.innerHTML = chatData;
+    display_box.append(received_msg);
+
+    display_box.scrollTop = display_box.scrollHeight;
+
+    const data = {
+      lawyerId: myLawyerId,
+      email: userChatEmail,
+      chatting: {
+        textMsg: message,
+        sendBy: "user",
+      },
+    };
+    socket.emit("sendToLawyer", data);
+    document.getElementById("message").value = "";
+  }
+
+  // Receive a message from a lawyer
+  socket.on("receiveMessage", ({ textMsg, sendByEmail }) => {
+    if (myLawyerId == sendByEmail) {
+      const chatData = `
+  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+              alt="avatar 1" style="width: 45px; height: 100%;">
+            <div class="p-2 ms-1" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);">
+              <p class="small mb-0">${textMsg}</p>
+            </div>
+  `;
+
+      const received_msg = document.createElement("div");
+      received_msg.setAttribute(
+        "class",
+        "d-flex flex-row justify-content-start mb-4"
+      );
+      received_msg.innerHTML = chatData;
+      display_box.append(received_msg);
+
+      display_box.scrollTop = display_box.scrollHeight;
+      // Handle the received message as desired (e.g., display it on the page)
+    }
+  });
+
+  // update chat box
+  //   updateChatBox();
+
+  function updateChatBox(myLawyerId) {
+    fetch(
+      `${PORT}/myChat?lawyerId=${myLawyerId}&email=${userChatEmail}`
+    )
+      .then((req) => req.json())
+      .then((res) => appendChaBox(res));
+  }
+  function appendChaBox(data) {
+    document.getElementById("chat_box").innerHTML = data
+      .map((ele) => {
+        //         return `
+        // <p class=${ele.sendBy}> ${ele.textMsg} </p>
+        // `;
+        if (ele.sendBy != "user") {
+          return `
+<div class="d-flex flex-row justify-content-start mb-4">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+              alt="avatar 1" style="width: 45px; height: 100%;">
+            <div class="p-2 ms-1" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);">
+              <p class="small mb-0">${ele.textMsg}</p>
+            </div>
+          </div>
+`;
+        } else {
+          return `
+<div class="d-flex flex-row justify-content-end mb-4">
+            <div class="p-2 me-1 border" style="border-radius: 15px; background-color: #fbfbfb;">
+              <p class="small mb-0">${ele.textMsg}</p>
+            </div>
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+              alt="avatar 1" style="width: 45px; height: 100%;">
+          </div>
+`;
+        }
+      })
+      .join("");
+    display_box.scrollTop = display_box.scrollHeight;
+  }
+
+  function closeChatBox() {
+    chatSection.style.display = "none";
+  }
+  function toggleChats() {
+    const element = document.getElementById("myLawyers");
+    console.log(element.style.height);
+    if (element.style.height == "0px" || element.style.height == false) {
+      element.style.height = "50vh";
+    } else {
+      element.style.height = 0;
+    }
+  }
+</script>
+
+</html>

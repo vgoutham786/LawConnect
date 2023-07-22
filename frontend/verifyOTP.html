@@ -142,14 +142,14 @@
         <h3>Enter OTP</h3>
         
         <input type="text" class="custom-input" placeholder="Enter OTP"> <br>
-      
+   
         <button class="custom-btn">Verify</button>
         <div class="footer">
             <p>&copy; 2023 Law Connect. All rights reserved.</p>
         </div>
     </div>
     <script async>
-        let baseurl = "backend URL/";
+        let baseurl = "http://localhost:8080";
         const token = localStorage.getItem('verify');
         const btn = document.querySelector(".custom-btn");
         const input = document.querySelector(".custom-input");
@@ -172,10 +172,13 @@
             .then(res => res.json())
             .then((res) => {
                 alert(res.msg);
+                console.log(res.success)
                 if (res.success) {
-                    window.location.href = "./login.html";
+                    console.log("done")
+                    window.location.href = "./userlogin.html";
                 }
             })
+            
             .catch((error) => {
                 alert("An error occurred while verifying OTP. Please try again later.");
                 console.error(error);

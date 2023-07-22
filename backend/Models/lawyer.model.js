@@ -2,8 +2,15 @@ const mongoose = require("mongoose");
 
 const schema = new mongoose.Schema({
   lawyerId: String,
-  name: String,
-  email: String,
+    email:{
+        unique:true,
+        type:String},
+    Name:String,
+    password:String,
+    city:String,
+    role:{type:String,default:"lawyer"},
+    age:Number,
+    verify:Boolean,
   address: String,
   bio: String,
   skills: [String],

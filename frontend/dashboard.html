@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <script src="https://kit.fontawesome.com/e36d915985.js" crossorigin="anonymous"></script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Page</title>
+    <link rel="stylesheet" href="./AppointmentPage/appointment.css">  
+          <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+    crossorigin="anonymous"
+  />
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Lato&family=Libre+Franklin&family=Montserrat&family=Noto+Sans&family=Playfair+Display&family=Roboto&family=Rubik&family=Varela+Round&family=Work+Sans&display=swap');
+
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Lato", sans-serif;
+      }
+      :root {
+        --baseColor: rgb(53, 240, 243);
+      }
+.appointments > h1 {
+        text-align: center;
+        color: var(--baseColor);
+      }
+      .appointments .container .appointments_card {
+        border-radius: 0px;
+        border: 5px solid rgb(154, 153, 153);
+        padding: 10px;
+        display: flex;
+        height: 250px;
+        /* line-height: 10px; */
+      }
+      .appointments .container .appointments_card .details * {
+        margin: 0;
+      }
+      .appointments .container .appointments_card .details {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: space-between;
+      }
+      .appointments .container .appointments_card button {
+        border: none;
+        padding: 6px 18px;
+        background-color: var(--baseColor);
+        color: #000000;
+        border-radius: 20px;
+      }
+      .left_plate {
+        background-color: var(--baseColor);
+        /* width: 200px; */
+        height: 100%;
+        margin-right: 10px;
+        color: transparent;
+      }
+
+      .actions {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+      #countdown {
+        width: 250px;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px;
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+      #countdown li {
+        display: inline-block;
+        list-style-type: none;
+        /* font-size: 1.5em; */
+        /* padding: 1em; */
+      }
+
+      #countdown span {
+        display: block;
+        /* font-size: 4.5rem; */
+        color: var(--baseColor);
+      }
+:root {
+  --baseColor: rgb(53, 240, 243);
+}
+a{
+    text-decoration: none;
+}
+.nav-item a:hover {
+  color: var(--baseColor);
+}
+.nav-item a{
+  /* color: #fff; */
+  font-size: 20px;
+}
+#login_signup{
+  /* display: none; */
+}
+#login_signup a{
+  background-color: var(--baseColor);
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: 0.3s;
+  color: #000000;
+}
+#login_signup a:hover{
+  background-color: #787878;
+  /* color: rgb(53, 240, 243); */
+  color: #fff;
+}
+#loged_in_user {
+  display: none;
+  width: 150px;
+  /* height: 0px; */
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0px;
+}
+#loged_in_user i{
+  cursor: pointer;
+}
+
+/* ******************************** */
+.main_chat_container {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        height: 0px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        /* display: none; */
+        /* z-index: -1; */
+        /* border: 1px solid rgb(55, 0, 255); */
+      }
+      .main_chat_container > div {
+        width: 50vw;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        /* border: 1px solid rgb(4, 161, 64); */
+      }
+      .main_chat_container section{
+        position: relative;
+        /* border: 2px solid blue; */
+        z-index: 999;
+      }
+      .message_container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .chat_section {
+        /* border: 1px solid red; */
+        display: none;
+        width: 50%;
+      }
+      .chat_section > div > div > div {
+        /* border: 1px solid red; */
+        height: 100%;
+        width: 100%;
+      }
+
+      .message_container .box {
+        width: 25vw;
+        height: 50vh;
+        padding: 6px 10px;
+        border: 1px solid red;
+      }
+      .message_container .chat_box {
+        width: 100%;
+        height: 90%;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* border: 1px solid lime; */
+      }
+      .message_container .chat_box .lawyer {
+        background-color: grey;
+        color: #ffff;
+      }
+      .message_container .chat_box .user {
+        background-color: rgba(0, 255, 0, 0.475);
+        align-self: flex-end;
+        margin: 3px 0;
+        font-size: 18px;
+        min-width: 20px;
+        max-width: 90%;
+        padding: 6px;
+        border-radius: 10px 0 10px 10px;
+      }
+      .message_container .chat_box p {
+        padding: 4px;
+        margin-bottom: 6px;
+        max-width: 90%;
+      }
+      .allChatsContainer {
+        /* position: relative;
+        z-index: 999; */
+        /* border: 2px solid blue; */
+        width: 24vw;
+        max-height: 60vh;
+      }
+      .allChatsContainer #myLawyers {
+        background-color: #fff;
+        border-radius: 0 0 15px 15px;
+        border: 1px solid;
+        /* height: 50vh; */
+        height: 0px;
+        /* display: none; */
+        overflow-y: auto;
+        transition: 0.3s;
+      }
+      .item {
+        height: 50px;
+        display: flex;
+      }
+      .item .itemText {
+        line-height: 5px;
+        margin: 0;
+        padding: 10px;
+      }
+      .lastMessage {
+        font-size: 12px;
+        color: #707070;
+      }
+/* ******************************** */
+        #second{
+            border: 0px solid black;
+            width: 100%;
+        }
+        .right{
+            margin: auto;
+            border: 0px solid red;
+            width: 90%;
+        }
+
+        #navbar #div1> a img{
+          cursor: pointer;
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 320px;
+    height: auto;
+}
+/* #first_div h2 p div{
+   margin-top:20px;
+}
+#main_container{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: 30px;
+}
+#mainDiv{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: 30px 30px;
+  height: 200px;
+  gap: 20px 20px;
+  border: 1px solid black;
+}
+
+.msg{
+  height: 30px;
+  width: 100px;
+  border: 0px;
+  background-color: rgb(2, 255, 255);
+} */
+/* Example CSS for the generated elements */
+/* Example CSS for the generated elements */
+#mainDiv {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.first_div {
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.third_div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#main_container{
+display: grid;
+grid-template-columns: repeat(1,1fr);
+gap: 10px ;
+}
+
+.msg {
+  background-color: #4caf50;
+  color: #ffffff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.msg:hover {
+  background-color: #45a049;
+}
+
+#cancel {
+  background-color: #f44336;
+}
+
+#cancel:hover {
+  background-color: #d32f2f;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+p {
+  /* margin-top: 5px;
+  margin-bottom: 5px; */
+}
+
+
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+          <img
+            src="./AdminPage/image/logo-lawlink-removebg-preview.png"
+            height="40"
+            alt="Lwlink Logo"
+            loading="lazy"
+          />
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">OUR FIRM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">PRACTICE AREAS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">PAY BILL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">LOCATIONS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">CONTACT</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+   
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!-- Icon -->
+   
+        <!-- Notifications -->
+        <div class="dropdown" id="login_signup">
+          <a
+            href="./passwordPage/login.html"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Login / SignUp
+          </a>
+        </div>
+        <div id="loged_in_user" style="display: none; color: rgb(53, 240, 243); ">
+            <div id="loged_in_name"></div>
+              <!-- <i class="fa-solid fa-bell fa-shake fa-xl"></i> -->
+              <i class="fa-solid fa-right-from-bracket" onclick="logout()"></i>
+        </div>
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a
+            class="d-flex align-items-center hidden-arrow"
+            href="#"
+            id="navbarDropdownMenuAvatar"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+          </a>
+        </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+   </nav>
+   <!-- <div id="main">
+    <div style="margin-left: 3%; margin-top: 2%; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+        <h1>Your Appointments</h1>
+    </div>
+      <div id="second">
+          <div class="right">
+            <div id="main_container"></div>
+          </div>
+      </div>
+   </div> -->
+       <!-- appointments -->
+       <section class="appointments">
+        <h1>My Appointments</h1>
+        <div class="container" id="render_cards">
+          <!-- <div class="appointments_card">
+            <div class="left_plate">jkjkjk</div>
+            <div class="details">
+              <h1>Alina</h1>
+              <p>Meeting time - 4:00 PM</p>
+              <p>Meeting Date - 2023-06-23</p>
+              <p>Appointments are efficient when they are held with proper meeting hygiene standards. Meeting hygiene consists of organization and efficiency of conversation.</p>
+              <div class="actions">
+                <div class="btns">
+                  <button>Message</button>
+                  <button>Cancle Appointment</button>
+                </div>
+                <div class="count_container">
+                  <div id="countdown">
+                      <p><span id="days"></span>DAYS</p>
+                      <p><span id="hours"></span>HOURS</p>
+                      <p><span id="minutes"></span>MINUTES</p>
+                      <p><span id="seconds"></span>SECONDS</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </section>
+
+
+          <!-- chat box starts form herer -->
+    
+          <div class="main_chat_container" id="main_chat_container">
+            <div>
+              <section style="" class="chat_section" id="chat_section">
+                <div class="container" style="height: 100%">
+                  <div class="row d-flex justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-4">
+                      <div class="card" id="chat1" style="border-radius: 15px">
+                        <div
+                          class="card-header d-flex justify-content-between align-items-center bg-info text-white border-bottom-0"
+                          style="
+                            border-top-left-radius: 15px;
+                            border-top-right-radius: 15px;
+                          "
+                        >
+                          <!-- <i class="fas fa-angle-left"></i> -->
+                          <p class="mb-0 fw-bold">Live chat</p>
+                          <i class="fas fa-times" onclick="closeChatBox()" style="cursor: pointer;"></i>
+                        </div>
+                        <div class="card-body">
+                          <div
+                            id="chat_box"
+                            style="
+                              max-height: 300px;
+                              overflow-y: auto;
+                              padding-right: 10px;
+                            "
+                          ></div>
+      
+                          <div class="form-outline">
+                            <form id="msg_form">
+                              <input
+                                class="form-control"
+                                id="message"
+                                placeholder="Type your message"
+                              />
+                              <!-- <textarea
+                                    class="form-control"
+                                    id="message"
+                                    rows="2"
+                                    placeholder="Type your message"
+                                  ></textarea> -->
+                            </form>
+                            <!-- <i class="fa fa-duotone fa-paper-plane" onclick="sendMessage()"></i> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="allChatsContainer">
+                <div class="container">
+                  <div
+                    class="card-header d-flex justify-content-between align-items-center p-3 bg-info text-white border-bottom-0"
+                    style="
+                      border-top-left-radius: 15px;
+                      border-top-right-radius: 15px;
+                    "
+                  >
+                    <!-- <i class="fas fa-angle-left"></i> -->
+                    <p class="mb-0 fw-bold">Live chat</p>
+                    <!-- <i class="fas fa-times"></i> -->
+                    <i class="fa-brands fa-rocketchat fa-fade" onclick="toggleChats()"></i>
+                  </div>
+                  <div class="box" id="myLawyers">
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+       
+      <!-- chat box ends here -->
+</body>
+<script>
+
+// Parse localStorage values
+let userdata = JSON.parse(localStorage.getItem('userData'));
+let lawyer_local_data = JSON.parse(localStorage.getItem('Details'));
+
+let loged_in_user_data = JSON.parse(localStorage.getItem('userData')) || false
+     
+     if(loged_in_user_data){
+       // document.getElementById("main_chat_container").style.display = "flex"
+ logedIn()
+}
+
+function logedIn(){
+ document.getElementById("loged_in_name").textContent = loged_in_user_data.Name
+ document.getElementById("loged_in_user").style.display = "flex"
+ document.getElementById("login_signup").style.display = "none"
+ document.getElementById("main_chat_container").style.display = "flex"
+}
+
+function logout(){
+ document.getElementById("loged_in_user").style.display = "none"
+ document.getElementById("login_signup").style.display = "flex"
+ document.getElementById("main_chat_container").style.display = "none"
+ localStorage.removeItem("userData");
+}
+
+// Define API endpoint URL
+let lawyerData = 'https://lawlink.onrender.com/appointment';
+
+// Function to fetch data from the API
+function fetchData() {
+  fetch(`${lawyerData}/userEmail?email=${userdata.email}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      displayData(data);
+    })
+    .catch((err) => console.log(err));
+}
+
+
+function deleteById(id) {
+
+  fetch(`${lawyerData}/delete/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Error deleting resource');
+      }
+      console.log('Resource deleted successfully');
+      // fetchAppointments()
+      location.reload()
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+
+// Function to display data on the page
+function displayData(data) {
+  let mainContainer = document.getElementById('main_container');
+   mainContainer.innerHTML = ''
+  data.forEach((ele) => {
+   
+    let div = document.createElement('div');
+    div.id = ('mainDiv');
+
+    let div1 = document.createElement('div');
+    div1.id = ('first_div');
+
+    let div3 = document.createElement('div');
+    div3.id = ('third_div');
+
+    let msg = document.createElement('button');
+    msg.innerText = 'Chat';
+    msg.className = 'msg'
+    msg.id = 'msg'
+    msg.addEventListener('click', () => {
+      // Handle chat button click event
+    });
+
+    let cancel = document.createElement('button');
+    cancel.innerText = 'Cancel Appointment';
+    cancel.className = 'msg'
+    cancel.id = 'cancel'
+
+    cancel.addEventListener('click',()=>{
+     deleteById(ele._id, data)
+    //  displayData(data)
+    })
+    div3.append(msg, cancel);
+
+    let name = document.createElement('h2');
+    name.innerText = `With ${ele.lawyerName}`;
+
+    let rank = document.createElement('p');
+    rank.innerText = `Lawyer Email: ${ele.lawyerEmail}`;
+
+    let date = document.createElement('p');
+    date.innerText = `Date: ${ele.date}`;
+
+    let price = document.createElement('p');
+    price.innerText = `Meeting Type: ${ele.meeting_type}`;
+
+    let bio = document.createElement('p');
+    bio.innerText = `Slot No.: ${ele.slotNumber}`;
+
+    div1.append(name, rank, bio, date, price, div3);
+
+    div.append(div1);
+
+    mainContainer.append(div);
+  });
+}
+
+// Call the fetchData function
+// fetchData();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  count down
+      const main = (data) => {
+        const second = 1000;
+        const minute = second * 60;
+        const hour = minute * 60;
+        const day = hour * 24;
+
+        // INSERT EVENT DATE AND TIME HERE IN THIS FORMAT: 'June 1, 2023, 19:00:00'
+        const EVENTDATE = new Date(data.dateTimeString);
+
+        const countDown = new Date(EVENTDATE).getTime();
+        const x = setInterval(() => {
+          const now = new Date().getTime();
+          const distance = countDown - now;
+
+          if (distance <= 0) {
+            // Stop the countdown and display "0:0:0:0" when time is over
+            clearInterval(x);
+            document.getElementById(data.days).innerText = "0";
+            document.getElementById(data.hours).innerText = "0";
+            document.getElementById(data.minutes).innerText = "0";
+            document.getElementById(data.seconds).innerText = "0";
+          } else {
+            document.getElementById(data.days).innerText = Math.floor(
+              distance / day
+            );
+            document.getElementById(data.hours).innerText = Math.floor(
+              (distance % day) / hour
+            );
+            document.getElementById(data.minutes).innerText = Math.floor(
+              (distance % hour) / minute
+            );
+            document.getElementById(data.seconds).innerText = Math.floor(
+              (distance % minute) / second
+            );
+          }
+        }, 0);
+      };
+
+      // main();
+
+      function fetchAppointments() {
+        fetch(`${lawyerData}/userEmail?email=${userdata.email}`)
+          .then((req) => req.json())
+          .then((res) => renderAppointments(res));
+      }
+      fetchAppointments();
+      const renderAppointments = (data) => {
+        // console.log(lawyer_chats);
+        let user_emails = new Set()
+        let chat_box_data = []
+        count_down_details = [];
+        render_cards.innerHTML = data
+          .map((ele) => {
+            console.log(ele);
+            if(ele.lawyerEmail && !user_emails.has(ele.lawyerEmail)){
+              user_emails.add(ele.lawyerEmail)
+              chat_box_data.push({email: ele.lawyerEmail, name: ele.lawyerName|| ele.lawyerEmail})
+            }
+            let time =
+              ele.slotNumber == 1 || ele.slotNumber == 9 || ele.slotNumber == 17
+                ? "09:00 AM"
+                : ele.slotNumber == 2 ||
+                  ele.slotNumber == 10 ||
+                  ele.slotNumber == 18
+                ? "10:00 AM"
+                : ele.slotNumber == 3 ||
+                  ele.slotNumber == 11 ||
+                  ele.slotNumber == 19
+                ? "11:00 AM"
+                : ele.slotNumber == 4 ||
+                  ele.slotNumber == 12 ||
+                  ele.slotNumber == 20
+                ? "02:00 PM"
+                : ele.slotNumber == 5 ||
+                  ele.slotNumber == 13 ||
+                  ele.slotNumber == 21
+                ? "03:00 PM"
+                : ele.slotNumber == 6 ||
+                  ele.slotNumber == 14 ||
+                  ele.slotNumber == 22
+                ? "05:00 PM"
+                : ele.slotNumber == 7 ||
+                  ele.slotNumber == 15 ||
+                  ele.slotNumber == 23
+                ? "06:00 PM"
+                : "07:00 PM";
+
+            let date = ele.date;
+            let dateTimeString = date + " " + time;
+            count_down_details.push({
+              dateTimeString,
+              days: `days${ele._id}`,
+              hours: `hours${ele._id}`,
+              minutes: `minutes${ele._id}`,
+              seconds: `seconds${ele._id}`,
+            });
+
+            return `
+            <div class="appointments_card">
+          <div class="left_plate">jkjkjk</div>
+          <div class="details">
+            <h1>${ele.lawyerName ? ele.lawyerName : "Alina"}</h1>
+            <p>Meeting time - ${time}</p>
+            <p>Meeting Date - ${ele.date}</p>
+            <p>Appointments are efficient when they are held with proper meeting hygiene standards. Meeting hygiene consists of organization and efficiency of conversation.</p>
+            <div class="actions">
+              <div class="btns">
+                <button>Message</button>
+                <button class="cancle_btn" data-id=${ele._id}>Cancle Appointment</button>
+              </div>
+              <div class="count_container">
+                <div id="countdown">
+                    <p><span id="days${ele._id}"></span>DAYS</p>
+                    <p><span id="hours${ele._id}"></span>HOURS</p>
+                    <p><span id="minutes${ele._id}"></span>MINUTES</p>
+                    <p><span id="seconds${ele._id}"></span>SECONDS</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+          })
+          .join("");
+        count_down_details.forEach((ele) => {
+          main(ele);
+        });
+        console.log(chat_box_data);
+
+        let cancle_btn = document.querySelectorAll(".cancle_btn")
+        cancle_btn.forEach(ele => {
+          let id = ele.getAttribute("data-id")
+          ele.addEventListener("click", () => {
+            deleteById(id)
+          })
+        })
+
+        render_chat_box(chat_box_data);
+        // console.log("data" + chat_box_data);
+      };
+
+      // render chat box
+      const render_chat_box = (data) => {
+        // console.log(data.messages);
+        // let data = res.messages;
+        console.log("iudfsiudf");
+        console.log(data);
+        
+        data.forEach((ele) => {
+          // console.log(ele.userEmail);
+              document.getElementById("myLawyers").innerHTML += `
+            <div
+                class="item myLawyers"
+                id="yeah"
+                data-lawyerId=${ele.email}
+              >
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                  alt=""
+                  style="width: 45px; height: 100%"
+                />
+                <div class="itemText">
+                  <p class="name">${ele.name}</p>
+                  <p class="lastMessage">Type a message..</p>
+                </div>
+              </div>
+            `;
+        });
+        openThisChat()
+      };
+
+
+
+      function openThisChat(){
+        const myChatLawyers = document.querySelectorAll(".myLawyers");
+        myChatLawyers.forEach((ele) => {
+        ele.addEventListener("click", () => {
+          myUserEmail = ele.getAttribute("data-lawyerId");
+          chatSection.style.display = "block";
+          updateChatBox(myUserEmail);
+        });
+      });
+      }
+
+      // Function to show the popup after 3 seconds
+      function showPopup() {
+        const popupContainer = document.getElementById("popupContainer");
+        popupContainer.style.display = "block";
+        popupContainer.style.opacity = 1;
+      }
+
+      // Function to hide the popup after 1 second
+      function hidePopup() {
+        const popupContainer = document.getElementById("popupContainer");
+        popupContainer.style.display = "none";
+        popupContainer.style.opacity = 0;
+      }
+
+
+
+
+
+</script>
+
+
+<script
+src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+crossorigin="anonymous"
+></script>
+
+<script>
+const PORT = "http://localhost:8080"
+const socket = io("http://localhost:8080", { transports: ["websocket"] });
+const userChatEmail = JSON.parse(localStorage.getItem("userData")).email || false
+let myLawyerId = "";
+const display_box = document.getElementById("chat_box");
+const myLawyers = document.querySelectorAll(".myLawyers");
+const chatSection = document.getElementById("chat_section");
+// const loged_in_user_data = JSON.parse(localStorage.getItem("userData")) || false
+myLawyers.forEach((ele) => {
+  ele.addEventListener("click", () => {
+    myLawyerId = ele.getAttribute("data-lawyerId");
+    chatSection.style.display = "block";
+    updateChatBox(myLawyerId);
+  });
+});
+
+// Connect to the server
+socket.on("connect", () => {
+  console.log("Connected to server");
+  socket.emit("registerUser", userChatEmail);
+});
+
+// Send a message to a lawyer
+document
+  .getElementById("msg_form")
+  .addEventListener("submit", (event) => {
+    event.preventDefault();
+    sendMessage();
+  });
+function sendMessage() {
+  // const lawyerId = document.getElementById('lawyerId').value;
+  const message = document.getElementById("message").value;
+
+  const chatData = `
+  <div class="p-2 me-1 border" style="border-radius: 15px; background-color: #fbfbfb;">
+              <p class="small mb-0">${message}</p>
+            </div>
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+              alt="avatar 1" style="width: 45px; height: 100%;">
+  `;
+
+  const received_msg = document.createElement("div");
+  received_msg.setAttribute(
+    "class",
+    "d-flex flex-row justify-content-end mb-4"
+  );
+  received_msg.innerHTML = chatData;
+  display_box.append(received_msg);
+
+  display_box.scrollTop = display_box.scrollHeight;
+
+  const data = {
+    lawyerId: myLawyerId,
+    email: userChatEmail,
+    chatting: {
+      textMsg: message,
+      sendBy: "user",
+    },
+  };
+  socket.emit("sendToLawyer", data);
+  document.getElementById("message").value = "";
+}
+
+// Receive a message from a lawyer
+socket.on("receiveMessage", ({textMsg, sendByEmail}) => {
+  if(myLawyerId==sendByEmail){
+    const chatData = `
+  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+              alt="avatar 1" style="width: 45px; height: 100%;">
+            <div class="p-2 ms-1" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);">
+              <p class="small mb-0">${textMsg}</p>
+            </div>
+  `;
+
+  const received_msg = document.createElement("div");
+  received_msg.setAttribute(
+    "class",
+    "d-flex flex-row justify-content-start mb-4"
+  );
+  received_msg.innerHTML = chatData;
+  display_box.append(received_msg);
+
+  display_box.scrollTop = display_box.scrollHeight;
+  // Handle the received message as desired (e.g., display it on the page)
+  }
+});
+
+// update chat box
+//   updateChatBox();
+
+function updateChatBox(myLawyerId) {
+  fetch(
+    `${PORT}/myChat?lawyerId=${myLawyerId}&email=${userChatEmail}`
+  )
+    .then((req) => req.json())
+    .then((res) => appendChaBox(res));
+}
+function appendChaBox(data) {
+  document.getElementById("chat_box").innerHTML = data
+    .map((ele) => {
+      //         return `
+      // <p class=${ele.sendBy}> ${ele.textMsg} </p>
+      // `;
+      if (ele.sendBy != "user") {
+        return `
+<div class="d-flex flex-row justify-content-start mb-4">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+              alt="avatar 1" style="width: 45px; height: 100%;">
+            <div class="p-2 ms-1" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);">
+              <p class="small mb-0">${ele.textMsg}</p>
+            </div>
+          </div>
+`;
+      } else {
+        return `
+<div class="d-flex flex-row justify-content-end mb-4">
+            <div class="p-2 me-1 border" style="border-radius: 15px; background-color: #fbfbfb;">
+              <p class="small mb-0">${ele.textMsg}</p>
+            </div>
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+              alt="avatar 1" style="width: 45px; height: 100%;">
+          </div>
+`;
+      }
+    })
+    .join("");
+  display_box.scrollTop = display_box.scrollHeight;
+}
+
+function closeChatBox() {
+  chatSection.style.display = "none";
+}
+function toggleChats() {
+  const element = document.getElementById("myLawyers");
+  console.log(element.style.height);
+  if (element.style.height == "0px" || element.style.height==false) {
+    element.style.height = "50vh";
+  } else {
+    element.style.height = 0;
+  }
+}
+</script>
+
+</html>

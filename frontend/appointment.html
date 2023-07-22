@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/e36d915985.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="./Styles/appointment.css">
+
+</head>
+
+<body>
+    <nav id="navbar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Navbar brand -->
+                    <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                        <img src="../AdminPage/image/logo-lawlink-removebg-preview.png" height="40" alt="Lwlink Logo"
+                            loading="lazy" />
+                    </a>
+                    <!-- Left links -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">OUR FIRM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">PRACTICE AREAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">PAY BILL</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">LOCATIONS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CONTACT</a>
+                        </li>
+                    </ul>
+                    <!-- Left links -->
+                </div>
+                <!-- Collapsible wrapper -->
+
+                <!-- Right elements -->
+                <div class="d-flex align-items-center">
+                    <!-- Icon -->
+
+                    <!-- Notifications -->
+                    <div class="dropdown" id="login_signup">
+                        <a href="../passwordPage/login.html" id="navbarDropdownMenuLink" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            Login / SignUp
+                        </a>
+                    </div>
+                    <div id="loged_in_user" style="display: none; color: rgb(53, 240, 243); ">
+                        <a href="../Dashboard.html">
+                            <div id="loged_in_name" style="cursor: pointer;"></div>
+                        </a>
+                        <!-- <i class="fa-solid fa-bell fa-shake fa-xl"></i> -->
+                        <i class="fa-solid fa-right-from-bracket" onclick="logout()"></i>
+                    </div>
+                    <!-- Avatar -->
+                    <div class="dropdown">
+                        <a class="d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
+                            role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        </a>
+                    </div>
+                </div>
+                <!-- Right elements -->
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <div id="div2">
+            <h1>Meet Our Lawyers</h1>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search">
+                <button class="search-button">
+                    <i class="fa-brands fa-searchengin"></i>
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+
+    <div class="left">
+        <div id="filterCard">
+
+            <div class="options" id="brands_options" style="overflow-y: scroll">
+                <div class="option">
+                    <input type="checkbox" name="" id="" class="brand_filter_option" value="Criminal Defense Lawyer" />
+                    <span>Criminal Defense Lawyer</span>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="" id="" class="brand_filter_option" value="Family Law Attorney" />
+                    <span>Family Law Attorney</span>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="" id="" class="brand_filter_option" value="Corporate Lawyer" />
+                    <span>Corporate Lawyer</span>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="" id="" class="brand_filter_option"
+                        value="Intellectual Property Lawyer" />
+                    <span>Intellectual Property Lawyer</span>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="" id="" class="brand_filter_option" value="Immigration Lawyer" />
+                    <span>Immigration Lawyer</span>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="" id="" class="brand_filter_option" value="Environmental Lawyer" />
+                    <span>Environmental Lawyer</span>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="" id="" class="brand_filter_option" value="Personal Injury Lawyer" />
+                    <span>Personal Injury Lawyer</span>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="" id="" class="brand_filter_option" value="Employment Lawyer" />
+                    <span>Employment Lawyer</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="right">
+            <div id="main_container"></div>
+        </div>
+    </div>
+
+
+</body>
+<script src="./Scripts/appointment.js"></script>
+
+</html>

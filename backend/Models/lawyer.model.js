@@ -4,6 +4,7 @@ const schema = new mongoose.Schema({
   lawyerId: String,
   name: String,
   email: String,
+  password: String,
   address: String,
   bio: String,
   skills: [String],
@@ -15,14 +16,22 @@ const schema = new mongoose.Schema({
   languages: [String],
   rating: Number,
   experience: String,
+  email: String,
   Rank: Number,
-  
+  messages: [
+    {
+      userEmail: String,
+      chats: [
+        {
+          textMsg: String,
+          sendBy: String,
+        },
+      ],
+    },
+  ],
 });
 
 const LawyerModel = mongoose.model("lawyer", schema);
 
 module.exports = { LawyerModel };
 
-
-
-  

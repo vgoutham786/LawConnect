@@ -34,14 +34,28 @@ body{
 .banner-left{
     width: 45%;
     /* border: 1px solid blue; */
+    /* background-color: #f2f5fa; */
+    /* border-radius: 10px; */
 }
 .banner-left h1{
     color: #414a4d;
     /* padding-left: 15px; */
     padding: 0 24px 24px;
-    font-size: 3vw;
+    font-size: 2.5vw;
     text-align: left;
+   margin-top: 60px;
 }
+
+.hammersec3 {
+    width: 30px;
+    margin-right: 4px;
+  }
+
+  .sec3para {
+    color: #707070;
+    margin-left: 35px;
+    font-size: 1vw;
+  }
 .banner-left h4{
     color: #414a4d;
     /* padding-left: 15px; */
@@ -52,8 +66,9 @@ body{
 
 .banner-left p{
     padding:  0 24px 0 24px;
-    font-size: 1.5vw;
-    color: #707070;
+    font-size: 2vw;
+    /* color: #707070; */
+    color: #414a4d;
     display: block;
     /* margin-block-start: 1em;
     margin-block-end: 1em;
@@ -64,8 +79,12 @@ body{
     width: 50%;
     height: 100%;
     /* border: 1px solid purple; */
+     /* background-color: #f2f5fa; */
 }
 
+.btn{
+    margin-top: 50px;
+}
 .start-now{
     border: none;
     display: inline-block;
@@ -99,7 +118,9 @@ body{
 }
 
 /* Banner 2  */
-
+/* .banner2-img{
+    margin-top: 50px; */
+/* } */
 .banner2 h2{
     text-align: center;
     font-size:  2.5vw;
@@ -144,7 +165,8 @@ body{
     grid-column-gap: 125px;
     grid-row-gap:50px;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 1px;
+    margin-bottom: 50px;
     background-color: #f2f5fa;
     grid-template-columns: repeat(3, 1fr);
 }
@@ -173,7 +195,9 @@ body{
     font-family: "Nunito";
  }
 .card img{
-    padding-left: 10px;
+  
+    border-radius: 10px;
+      padding-left: 10px;
 } 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);

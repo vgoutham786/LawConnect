@@ -82,9 +82,9 @@ signinRoute.post("/verifyotp", otpverify, async (req, res) => {
     const databaseotp = await UserOTP.find({ Useremail });
     try {
         //if(databaseotp.length>0){
-        console.log(databaseotp)
+        console.log(databaseotp[databaseotp.length-1].otp)
         console.log("otp", otp)
-        if (otp == databaseotp[0].otp) {
+        if (otp == databaseotp[databaseotp.length-1].otp) {
             await UserModel.findByIdAndUpdate(user[0]._id, { verify: true });
             await UserOTP.deleteMany({ Useremail });
             res.status(200).json({ msg: "Email verified", success: true });

@@ -368,13 +368,7 @@
       padding: 20px;
     }
   </style>
-  <link rel="stylesheet" href="./Styles/footer.css" />
-  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="icon" type="image/x-icon" href="Images/justice.png" />
-  <link rel="stylesheet" href="./Styles/navbar.css" />
+  <link rel="stylesheet" href="./Styles/navbar.css">
 </head>
 
 <body>
@@ -532,7 +526,7 @@
   </section>
 
 
-  <div id="main">
+  <div id="main" style="margin-top: 100px;">
     <div id="second-div">
       <div id="image">
         <img id="img" src="https://www.latest-hairstyles.com/wp-content/uploads/professional-hairstyles-1.jpg"
@@ -642,49 +636,6 @@
 
   <!-- chat box ends here -->
 
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="footer-col">
-          <h4>company</h4>
-          <ul>
-            <li><a href="#">about us</a></li>
-            <li><a href="#">our services</a></li>
-            <li><a href="#">privacy policy</a></li>
-            <li><a href="#">affiliate program</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>get help</h4>
-          <ul>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Legal Policies</a></li>
-            <li><a href="#">Feedback</a></li>
-            <li><a href="#">Support Center</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Sales</h4>
-          <ul>
-            <li><a href="#">Contact Sales</a></li>
-            <li><a href="#">Plans & Pricing</a></li>
-            <li><a href="#">Request a Demo</a></li>
-            <li><a href="#">Webinars and Events</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>follow us</h4>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 </body>
 
 <script>
@@ -752,10 +703,10 @@
   let currentSelectSlot = false;
   let loged_in_user_data = JSON.parse(localStorage.getItem('userData')) || false
 
-  if (loged_in_user_data) {
-    // document.getElementById("main_chat_container").style.display = "flex"
-    logedIn()
-  }
+  // if (loged_in_user_data) {
+  //   // document.getElementById("main_chat_container").style.display = "flex"
+  //   logedIn()
+  // }
 
   document.getElementById("input_user_name").value = "loged_in_user_data.Name"
   document.getElementById("input_user_email").value = loged_in_user_data.email
@@ -901,7 +852,7 @@
   function openForm() {
     let checker = JSON.parse(localStorage.getItem("userData"))
     if (!checker) {
-      location.href = "../passwordPage/login.html"
+      location.href = "./userlogin.html"
     } else {
       console.log(loged_in_user_data);
       document.getElementById("input_user_name").value = loged_in_user_data.Name

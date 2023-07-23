@@ -1,0 +1,822 @@
+[
+    {
+        "lawyerId": "LAW008",
+        "name": "Daniel Wilson",
+        "email": "daniel.wilson@example.com",
+        "password": "hashed_password_here",
+        "address": "789 Birch Lane, Cityville",
+        "bio": "Experienced intellectual property lawyer, safeguarding clients' innovations.",
+        "skills": [
+            "Intellectual Property Law",
+            "Patents",
+            "Trademarks"
+        ],
+        "profession": "Intellectual Property Lawyer",
+        "gender": "Male",
+        "phone": 15554567890,
+        "image": "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=2000",
+        "price": "$290 per hour",
+        "languages": [
+            "English",
+            "Mandarin"
+        ],
+        "rating": 4.6,
+        "experience": "9+ years",
+        "Rank": 4,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need legal representation for a criminal case. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Of course, I'll gladly take on your case. Let's discuss the details.",
+                        "sendBy": "Robert Williams"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW009",
+        "name": "Ava Rodriguez",
+        "email": "ava.rodriguez@example.com",
+        "password": "hashed_password_here",
+        "address": "456 Oakwood Drive, Suburbia",
+        "bio": "Experienced immigration lawyer, assisting individuals with visa applications.",
+        "skills": [
+            "Immigration Law",
+            "Visa Applications",
+            "Asylum Cases"
+        ],
+        "profession": "Immigration Lawyer",
+        "gender": "Female",
+        "phone": 15558765432,
+        "image": "https://www.latest-hairstyles.com/wp-content/uploads/professional-hairstyles-1.jpg",
+        "price": "$280 per hour",
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "rating": 4.7,
+        "experience": "11+ years",
+        "Rank": 5,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need legal representation for a criminal case. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Of course, I'll gladly take on your case. Let's discuss the details.",
+                        "sendBy": "Robert Williams"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW010",
+        "name": "James Miller",
+        "email": "james.miller@example.com",
+        "password": "hashed_password_here",
+        "address": "123 Cedar Road, Townsville",
+        "bio": "Experienced personal injury lawyer, advocating for accident victims.",
+        "skills": [
+            "Personal Injury Law",
+            "Car Accidents",
+            "Slip and Fall"
+        ],
+        "profession": "Personal Injury Lawyer",
+        "gender": "Male",
+        "phone": 15556543210,
+        "image": "https://indianwomennetwork.com/wp-content/uploads/2022/02/slider-women-final-1.png",
+        "price": "$270 per hour",
+        "languages": [
+            "English",
+            "German"
+        ],
+        "rating": 4.9,
+        "experience": "13+ years",
+        "Rank": 5,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need legal representation for a criminal case. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Of course, I'll gladly take on your case. Let's discuss the details.",
+                        "sendBy": "Robert Williams"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW011",
+        "name": "Grace Turner",
+        "email": "grace.turner@example.com",
+        "password": "hashed_password_here",
+        "address": "987 Elm Street, Villagetown",
+        "bio": "Experienced family lawyer, handling diverse family law matters.",
+        "skills": [
+            "Family Law",
+            "Child Custody",
+            "Adoption"
+        ],
+        "profession": "Family Lawyer",
+        "gender": "Female",
+        "phone": 15552345678,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Outdoors-man-portrait_%28cropped%29.jpg/1200px-Outdoors-man-portrait_%28cropped%29.jpg",
+        "price": "$260 per hour",
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "rating": 4.8,
+        "experience": "12+ years",
+        "Rank": 6,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need legal representation for a criminal case. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Of course, I'll gladly take on your case. Let's discuss the details.",
+                        "sendBy": "Robert Williams"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW012",
+        "name": "Henry White",
+        "email": "henry.white@example.com",
+        "password": "hashed_password_here",
+        "address": "345 Pine Avenue, Metropolis",
+        "bio": "Experienced real estate attorney, facilitating property transactions.",
+        "skills": [
+            "Real Estate Law",
+            "Home Buying",
+            "Leases"
+        ],
+        "profession": "Real Estate Lawyer",
+        "gender": "Male",
+        "phone": 15559876543,
+        "image": "https://femina.wwmindia.com/content/2021/sep/women-thumb1632797644.jpg",
+        "price": "$290 per hour",
+        "languages": [
+            "English",
+            "French"
+        ],
+        "rating": 4.7,
+        "experience": "10+ years",
+        "Rank": 6,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need legal representation for a criminal case. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Of course, I'll gladly take on your case. Let's discuss the details.",
+                        "sendBy": "Robert Williams"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW013",
+        "name": "Chloe Scott",
+        "email": "chloe.scott@example.com",
+        "password": "hashed_password_here",
+        "address": "567 Maple Lane, Countryside",
+        "bio": "Experienced criminal defense attorney, protecting clients' rights.",
+        "skills": [
+            "Criminal Law",
+            "White Collar Crimes",
+            "Drug Offenses"
+        ],
+        "profession": "Criminal Defense Lawyer",
+        "gender": "Female",
+        "phone": 15557654321,
+        "image": "https://img.freepik.com/free-photo/handsome-young-businessman-suit_273609-6513.jpg",
+        "price": "$280 per hour",
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "rating": 4.8,
+        "experience": "11+ years",
+        "Rank": 7,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need legal representation for a criminal case. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Of course, I'll gladly take on your case. Let's discuss the details.",
+                        "sendBy": "Robert Williams"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW014",
+        "name": "Ethan Adams",
+        "email": "ethan.adams@example.com",
+        "password": "hashed_password_here",
+        "address": "789 Oak Avenue, Cityburg",
+        "bio": "Experienced estate planning lawyer, helping clients with their estates.",
+        "skills": [
+            "Estate Planning",
+            "Trusts",
+            "Estate Administration"
+        ],
+        "profession": "Estate Planning Lawyer",
+        "gender": "Male",
+        "phone": 15554567890,
+        "image": "https://savvywomen.tomorrowmakers.com/sites/default/files/2020-09/Where%20can%20the%20Indian%20woman%20invest%20her%20money%20smartly.jpg",
+        "price": "$270 per hour",
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "rating": 4.7,
+        "experience": "12+ years",
+        "Rank": 7,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need legal representation for a criminal case. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Of course, I'll gladly take on your case. Let's discuss the details.",
+                        "sendBy": "Robert Williams"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW015",
+        "name": "Avery Phillips",
+        "email": "avery.phillips@example.com",
+        "password": "hashed_password_here",
+        "address": "123 Elmwood Avenue, Townsville",
+        "bio": "Experienced corporate lawyer, providing legal solutions for businesses.",
+        "skills": [
+            "Corporate Law",
+            "Contracts",
+            "Mergers & Acquisitions"
+        ],
+        "profession": "Corporate Lawyer",
+        "gender": "Female",
+        "phone": 15556789012,
+        "image": "https://img.freepik.com/free-photo/close-up-photo-young-successful-business-man-black-suit_171337-9509.jpg",
+        "price": "$300 per hour",
+        "languages": [
+            "English",
+            "French"
+        ],
+        "rating": 4.9,
+        "experience": "14+ years",
+        "Rank": 8,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need legal representation for a criminal case. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Of course, I'll gladly take on your case. Let's discuss the details.",
+                        "sendBy": "Robert Williams"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW001",
+        "name": "Alice Johnson",
+        "email": "alice.johnson@example.com",
+        "password": "hashed_password_here",
+        "address": "456 Oak Avenue, Townsville",
+        "bio": "Experienced family lawyer with a passion for helping people.",
+        "skills": [
+            "Family Law",
+            "Divorce",
+            "Child Custody"
+        ],
+        "profession": "Family Lawyer",
+        "gender": "Female",
+        "phone": 15551234567,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4UW4D7iappIsSHFnOL2I2EdJc6X4UB0mPflF_pwPC-_tOIckLyH9EiqJI6NYPC-H09ZU&usqp=CAU",
+        "price": "$250 per hour",
+        "languages": [
+            "English",
+            "French"
+        ],
+        "rating": 4.7,
+        "experience": "12+ years",
+        "Rank": 1,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "Hello, I'm interested in hiring your services for a family law matter.",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Sure, I'd be happy to help. Let's schedule a consultation.",
+                        "sendBy": "Alice Johnson"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW002",
+        "name": "Robert Williams",
+        "email": "robert.williams@example.com",
+        "password": "hashed_password_here",
+        "address": "789 Elm Street, Cityburg",
+        "bio": "Experienced criminal defense attorney, dedicated to protecting clients' rights.",
+        "skills": [
+            "Criminal Law",
+            "DUI Defense",
+            "Assault Cases"
+        ],
+        "profession": "Criminal Defense Lawyer",
+        "gender": "Male",
+        "phone": 15559876543,
+        "image": "https://img.freepik.com/premium-photo/attractive-young-businessman-wearing-suit-standing-isolated-gray-wall-arms-folded_171337-100719.jpg",
+        "price": "$300 per hour",
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "rating": 4.9,
+        "experience": "15+ years",
+        "Rank": 1,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need legal representation for a criminal case. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Of course, I'll gladly take on your case. Let's discuss the details.",
+                        "sendBy": "Robert Williams"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW003",
+        "name": "Emily Anderson",
+        "email": "emily.anderson@example.com",
+        "password": "hashed_password_here",
+        "address": "123 Maple Lane, Countryside",
+        "bio": "Experienced immigration lawyer, committed to helping individuals achieve their immigration goals.",
+        "skills": [
+            "Immigration Law",
+            "Visa Applications",
+            "Green Card"
+        ],
+        "profession": "Immigration Lawyer",
+        "gender": "Female",
+        "phone": 15551234567,
+        "image": "https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/article_images/2020/05/19/file772oks56vpu2mfape0x-963011644-1569247233.jpg?itok=3hX4H5oB",
+        "price": "$280 per hour",
+        "languages": [
+            "English",
+            "German"
+        ],
+        "rating": 4.6,
+        "experience": "10+ years",
+        "Rank": 2,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need legal representation for a criminal case. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Of course, I'll gladly take on your case. Let's discuss the details.",
+                        "sendBy": "Robert Williams"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW004",
+        "name": "Michael Lee",
+        "email": "michael.lee@example.com",
+        "password": "hashed_password_here",
+        "address": "321 Pine Street, Metropolis",
+        "bio": "Experienced personal injury lawyer, dedicated to seeking justice for injury victims.",
+        "skills": [
+            "Personal Injury Law",
+            "Accident Claims",
+            "Medical Malpractice"
+        ],
+        "profession": "Personal Injury Lawyer",
+        "gender": "Male",
+        "phone": 15559876543,
+        "image": "https://media.istockphoto.com/id/613531310/photo/young-and-handsome.jpg?s=612x612&w=0&k=20&c=RJVt3sQQ6uhh9JPSBjgTnnKrYlexIJHLsYMHOr_Dskg=",
+        "price": "$270 per hour",
+        "languages": [
+            "English",
+            "Chinese"
+        ],
+        "rating": 4.8,
+        "experience": "14+ years",
+        "Rank": 2,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need legal representation for a criminal case. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Of course, I'll gladly take on your case. Let's discuss the details.",
+                        "sendBy": "Robert Williams"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW005",
+        "name": "Sophia Martinez",
+        "email": "sophia.martinez@example.com",
+        "password": "hashed_password_here",
+        "address": "567 Cedar Road, Villagetown",
+        "bio": "Experienced estate planning attorney, helping clients secure their legacies.",
+        "skills": [
+            "Estate Planning",
+            "Wills and Trusts",
+            "Probate"
+        ],
+        "profession": "Estate Planning Lawyer",
+        "gender": "Female",
+        "phone": 15558765432,
+        "image": "https://media.istockphoto.com/id/1296271163/photo/confident-businessman-with-arms-crossed.jpg?b=1&s=612x612&w=0&k=20&c=PmOkusfyqk2-WR55s8CWUwTNE7m7O6kJM03_odqqpkA=",
+        "price": "$290 per hour",
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "rating": 4.9,
+        "experience": "11+ years",
+        "Rank": 3,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need legal representation for a criminal case. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Of course, I'll gladly take on your case. Let's discuss the details.",
+                        "sendBy": "Robert Williams"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW006",
+        "name": "William Taylor",
+        "email": "william.taylor@example.com",
+        "password": "hashed_password_here",
+        "address": "987 Oakwood Drive, Suburbia",
+        "bio": "Experienced real estate attorney, assisting clients in property transactions.",
+        "skills": [
+            "Real Estate Law",
+            "Property Disputes",
+            "Commercial Leases"
+        ],
+        "profession": "Real Estate Lawyer",
+        "gender": "Male",
+        "phone": 15552345678,
+        "image": "https://www.forbesindia.com/media/wpower2020/Monika%20Shergill.jpg",
+        "price": "$260 per hour",
+        "languages": [
+            "English",
+            "French"
+        ],
+        "rating": 4.7,
+        "experience": "13+ years",
+        "Rank": 3,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need legal representation for a criminal case. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Of course, I'll gladly take on your case. Let's discuss the details.",
+                        "sendBy": "Robert Williams"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW007",
+        "name": "Olivia Clark",
+        "email": "olivia.clark@example.com",
+        "password": "hashed_password_here",
+        "address": "345 Elmwood Avenue, Townsville",
+        "bio": "Experienced employment lawyer, fighting for workers' rights.",
+        "skills": [
+            "Employment Law",
+            "Discrimination Cases",
+            "Wrongful Termination"
+        ],
+        "profession": "Employment Lawyer",
+        "gender": "Female",
+        "phone": 15557654321,
+        "image": "https://etimg.etb2bimg.com/photo/90718603.cms",
+        "price": "$280 per hour",
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "rating": 4.8,
+        "experience": "10+ years",
+        "Rank": 4,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need legal representation for a criminal case. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Of course, I'll gladly take on your case. Let's discuss the details.",
+                        "sendBy": "Robert Williams"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW015",
+        "name": "Avery Phillips",
+        "email": "avery.phillips@example.com",
+        "password": "hashed_password_here",
+        "address": "123 Elmwood Avenue, Townsville",
+        "bio": "Experienced corporate lawyer, providing legal solutions for businesses.",
+        "skills": [
+            "Corporate Law",
+            "Contracts",
+            "Mergers & Acquisitions"
+        ],
+        "profession": "Corporate Lawyer",
+        "gender": "Female",
+        "phone": 15556789012,
+        "image": "https://www.thenewsminute.com/sites/default/files/styles/news_detail/public/Woman_professional_on_laptop_090621_picxymunna_1200.jpeg?itok=rKBrN9SP",
+        "price": "$300 per hour",
+        "languages": [
+            "English",
+            "French"
+        ],
+        "rating": 4.9,
+        "experience": "14+ years",
+        "Rank": 8,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need assistance with a business contract. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Absolutely, I can review and draft the contract for you.",
+                        "sendBy": "Avery Phillips"
+                    },
+                    {
+                        "textMsg": "Great! Let's schedule a meeting to discuss the details.",
+                        "sendBy": "Avery Phillips"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW016",
+        "name": "Matthew Turner",
+        "email": "matthew.turner@example.com",
+        "password": "hashed_password_here",
+        "address": "789 Pine Avenue, Cityburg",
+        "bio": "Experienced intellectual property lawyer, safeguarding clients' innovations.",
+        "skills": [
+            "Intellectual Property Law",
+            "Patents",
+            "Copyrights"
+        ],
+        "profession": "Intellectual Property Lawyer",
+        "gender": "Male",
+        "phone": 15551234567,
+        "image": "https://img.freepik.com/free-photo/portrait-young-indian-top-manager-t-shirt-tie-crossed-arms-smiling-white-isolated-wall_496169-1513.jpg",
+        "price": "$290 per hour",
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "rating": 4.7,
+        "experience": "11+ years",
+        "Rank": 9,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need assistance with a business contract. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Absolutely, I can review and draft the contract for you.",
+                        "sendBy": "Avery Phillips"
+                    },
+                    {
+                        "textMsg": "Great! Let's schedule a meeting to discuss the details.",
+                        "sendBy": "Avery Phillips"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW017",
+        "name": "Lily Morgan",
+        "email": "lily.morgan@example.com",
+        "password": "hashed_password_here",
+        "address": "567 Cedar Road, Villagetown",
+        "bio": "Experienced divorce lawyer, guiding clients through challenging times.",
+        "skills": [
+            "Divorce Law",
+            "Child Support",
+            "Property Division"
+        ],
+        "profession": "Divorce Lawyer",
+        "gender": "Female",
+        "phone": 15552345678,
+        "image": "https://indianwomenblog.org/wp-content/uploads/2017/12/Cover11.jpg",
+        "price": "$280 per hour",
+        "languages": [
+            "English",
+            "German"
+        ],
+        "rating": 4.8,
+        "experience": "12+ years",
+        "Rank": 9,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need assistance with a business contract. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Absolutely, I can review and draft the contract for you.",
+                        "sendBy": "Avery Phillips"
+                    },
+                    {
+                        "textMsg": "Great! Let's schedule a meeting to discuss the details.",
+                        "sendBy": "Avery Phillips"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW018",
+        "name": "Andrew Carter",
+        "email": "andrew.carter@example.com",
+        "password": "hashed_password_here",
+        "address": "987 Oakwood Drive, Suburbia",
+        "bio": "Experienced personal injury lawyer, dedicated to fighting for accident victims.",
+        "skills": [
+            "Personal Injury Law",
+            "Car Accidents",
+            "Medical Malpractice"
+        ],
+        "profession": "Personal Injury Lawyer",
+        "gender": "Male",
+        "phone": 15559876543,
+        "image": "https://img.freepik.com/free-photo/confident-good-looking-young-businessman-pointing-finger-while-standing-against-isolated-background_662251-801.jpg",
+        "price": "$270 per hour",
+        "languages": [
+            "English",
+            "French"
+        ],
+        "rating": 4.9,
+        "experience": "13+ years",
+        "Rank": 10,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need assistance with a business contract. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Absolutely, I can review and draft the contract for you.",
+                        "sendBy": "Avery Phillips"
+                    },
+                    {
+                        "textMsg": "Great! Let's schedule a meeting to discuss the details.",
+                        "sendBy": "Avery Phillips"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lawyerId": "LAW019",
+        "name": "Isabella Rivera",
+        "email": "isabella.rivera@example.com",
+        "password": "hashed_password_here",
+        "address": "345 Pine Avenue, Metropolis",
+        "bio": "Experienced real estate attorney, handling property transactions with care.",
+        "skills": [
+            "Real Estate Law",
+            "Home Buying",
+            "Leases"
+        ],
+        "profession": "Real Estate Lawyer",
+        "gender": "Female",
+        "phone": 15557654321,
+        "image": "https://indianwomenblog.org/wp-content/uploads/2017/05/Cover_kes.jpghttps://example.com/isabella_rivera_profile.jpg",
+        "price": "$290 per hour",
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "rating": 4.7,
+        "experience": "10+ years",
+        "Rank": 10,
+        "messages": [
+            {
+                "userEmail": "user@example.com",
+                "chats": [
+                    {
+                        "textMsg": "I need assistance with a business contract. Can you help?",
+                        "sendBy": "user"
+                    },
+                    {
+                        "textMsg": "Absolutely, I can review and draft the contract for you.",
+                        "sendBy": "Avery Phillips"
+                    },
+                    {
+                        "textMsg": "Great! Let's schedule a meeting to discuss the details.",
+                        "sendBy": "Avery Phillips"
+                    }
+                ]
+            }
+        ]
+    }
+]

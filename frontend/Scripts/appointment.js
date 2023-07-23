@@ -1,4 +1,4 @@
-let lawyerData = 'https://lawlink.onrender.com/lawyer'
+let lawyerData = 'http://localhost:8000/lawyer'
 
 
 console.log(lawyerData)

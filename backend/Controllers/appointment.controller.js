@@ -2,6 +2,9 @@ const AppointmentModel = require('../Models/appointment.model')
 
 const getAll = async(req,res) => {
   try{
+    const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 8;
+        const skipIndex = (page-1) * limit;
     const data = await AppointmentModel.find()
     res.status(200).send(data)
   }

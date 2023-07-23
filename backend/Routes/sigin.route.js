@@ -165,26 +165,25 @@ signinRoute.post("/lawyer-login", async (req, res) => {
         res.status(404).send({ msg: "Network Error !" });
     }
 })
-// const transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     host: 'smtp.gmail.email',
-//     port: 587,
-//     secure: false,
-//     auth: {
-//         //user: 'law.connect.verify@gmail.com',
-//         //pass: 'Aa1Bb2Cc3Dd4'
-//         user: 'guiseppe.wyman@ethereal.email',
-//         pass: 'GR61aaWV5vgevXpe9p'
-//     }
-// });
 const transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
+    service: 'gmail',
+    host: 'smtp.gmail.email',
     port: 587,
+    secure: false,
     auth: {
-        user: 'josephine37@ethereal.email',
-        pass: 'NhGCaeTPgVPRxJ2p6k'
+        user: 'law.connect.verify@gmail.com',
+        pass: 'labxgrhebmiwdgrq'
+    
     }
 });
+// const transporter = nodemailer.createTransport({
+//     host: 'smtp.ethereal.email',
+//     port: 587,
+//     auth: {
+//         user: 'josephine37@ethereal.email',
+//         pass: 'NhGCaeTPgVPRxJ2p6k'
+//     }
+// });
 
 function sendOTPforverification(email, otp) {
     const subject = "Email Verification - Law Connect";
@@ -205,7 +204,7 @@ function sendOTPforverification(email, otp) {
 
     transporter
         .sendMail({
-            from: "josephine37@ethereal.email",
+            from: "law.connect.verify@gmail.com",
             to: email,
             subject: subject,
             text: text,

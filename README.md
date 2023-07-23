@@ -1,6 +1,6 @@
 # Law Connect
 🍁Innovative live project. Experience it: (())
-
+The Lawyer Appointment Portal is a dynamic web application that simplifies the process of scheduling appointments with legal professionals. It serves as a user-friendly platform for individuals seeking legal advice or representation to connect with experienced lawyers and book appointments based on their availability.
 
 ## Tech Stack
 
@@ -19,7 +19,50 @@
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)&nbsp;
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)&nbsp;
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)&nbsp;
-![Websocket](data:image/png;base64,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)&nbsp
+
+## Pages
+### Home Page
+Our home page serves as the welcoming entry point to our Lawyer Appointment Portal, where users can discover the benefits of our platform and explore the seamless process of connecting with experienced lawyers for their legal needs. We aim to make the daunting task of finding the right legal expert and booking appointments a breeze through our user-friendly interface and extensive lawyer database.
+
+
+
+### Login and Sign up Page
+User Sign Up: Users can create a new account by providing their email, password, and other necessary information.
+User Login: Registered users can log in to access their account using their email and password.
+Lawyer Sign Up: Lawyers can create a new account by providing their email, password, and other necessary information.
+Lawyer Login: Registered lawyers can log in to access their account using their email and password.
+Account Verification: An email verification system is implemented to ensure valid user and lawyer accounts.
+Forgot Password: Users and lawyers can reset their passwords through the forgot password functionality.
+Account Management: Users and lawyers can update their profile information and change passwords.
+Security: Passwords are stored using strong encryption algorithms to ensure data security.
+
+
+
+### Otp Page
+The OTP Validator Page is a crucial component of our Lawyer Appointment Portal, ensuring a secure and reliable user authentication process. This page is designed to verify the authenticity of users before granting them access to their accounts or confirming essential actions. The key features of the OTP Validator Page include:
+
+
+###Find Lawyer Page
+The Lawyer Display Page is a central component of our Lawyer Appointment Portal, providing users with a comprehensive list of registered lawyers. This page is designed to showcase lawyers' profiles, experience, specialization, and reviews, helping users make informed decisions when choosing legal assistance. The key features of the Lawyer Display Page include:
+
+
+### Lawyer Individual Page
+The Individual Lawyer Profile Page is a dedicated and comprehensive page that showcases the detailed information, expertise, and professional background of a specific lawyer on our Lawyer Appointment Portal. This page serves as a focal point for users to gain in-depth insights into a lawyer's qualifications, experience, and specialization, facilitating an informed decision-making process. The key discriminations and features of the Individual Lawyer Profile Page include:
+
+
+### Slots Page
+The Slots Page is a crucial component of our Lawyer Appointment Portal, providing a user-friendly interface for both lawyers and users to manage and view available appointment slots. This page streamlines the process of scheduling consultations and ensures efficient time management for lawyers. The key features of the Slots Page include:
+
+
+### Booking Page
+The Booking Page is a vital component of our Lawyer Appointment Portal, where users can schedule appointments with their chosen lawyers in a seamless and user-friendly manner. This page serves as the gateway to secure legal consultations and facilitates a smooth process for both new and returning clients. The key features of the Booking Page include
+
+
+
+
+
+
+
 
 
 

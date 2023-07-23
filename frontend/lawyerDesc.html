@@ -368,78 +368,45 @@
       padding: 20px;
     }
   </style>
+  <link rel="stylesheet" href="./Styles/footer.css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="icon" type="image/x-icon" href="Images/justice.png" />
+  <link rel="stylesheet" href="./Styles/navbar.css" />
 </head>
 
 <body>
 
 
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-      <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- Navbar brand -->
-        <a class="navbar-brand mt-2 mt-lg-0" href="#">
-          <img src="../AdminPage/image/logo-lawlink-removebg-preview.png" height="40" alt="Lwlink Logo"
-            loading="lazy" />
-        </a>
-        <!-- Left links -->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">HOME</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./appointment.html">OUR FIRM</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">PRACTICE AREAS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">PAY BILL</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">FAQ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">LOCATIONS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./appointment.html">CONTACT</a>
-          </li>
-        </ul>
-        <!-- Left links -->
-      </div>
-      <!-- Collapsible wrapper -->
-
-      <!-- Right elements -->
-      <div class="d-flex align-items-center">
-        <!-- Icon -->
-
-        <!-- Notifications -->
-        <div class="dropdown" id="login_signup">
-          <a href="../passwordPage/login.html" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
-            aria-expanded="false">
-            Login / SignUp
-          </a>
-        </div>
-        <div id="loged_in_user" style="display: none; color: rgb(53, 240, 243); ">
-          <a href="../Dashboard.html">
-            <div id="loged_in_name" style="cursor: pointer;"></div>
-          </a>
-          <!-- <i class="fa-solid fa-bell fa-shake fa-xl"></i> -->
-          <i class="fa-solid fa-right-from-bracket" onclick="logout()"></i>
-        </div>
-        <!-- Avatar -->
-        <div class="dropdown">
-          <a class="d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button"
-            data-mdb-toggle="dropdown" aria-expanded="false">
-          </a>
-        </div>
-      </div>
-      <!-- Right elements -->
+  <div class="navbar">
+    <div class="right-nav">
+      <a href="./HomePage.html"><img width="30" src="Images/legal-services.png" alt="" /></a>
+      <h4>Law Connect</h4>
     </div>
-    <!-- Container wrapper -->
-  </nav>
+    <div class="nav">
+      <a href="./HomePage.html">
+        <p>Home</p>
+      </a>
+      <p></p>
+      <a href="./appointment.html">
+        <p>Find A Lawyer</p>
+      </a>
+      <p></p>
+      <a href="./dashboard.html">
+        <p>My Bookings</p>
+      </a>
+      <p></p>
+      <p>
+        <i class="fa-regular fa-user" style="color: #d043b6"></i>&nbsp;&nbsp;<span id="profile">Profile</span>
+      </p>
+      <p></p>
+      <div id="signup-logout-btn">
+      </div>
+      <div id="space"></div>
+    </div>
+  </div>
 
   <section class="slots_section" id="slot_popup">
     <div class="container">
@@ -675,6 +642,49 @@
 
   <!-- chat box ends here -->
 
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">affiliate program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Legal Policies</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Support Center</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Sales</h4>
+          <ul>
+            <li><a href="#">Contact Sales</a></li>
+            <li><a href="#">Plans & Pricing</a></li>
+            <li><a href="#">Request a Demo</a></li>
+            <li><a href="#">Webinars and Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 
 <script>

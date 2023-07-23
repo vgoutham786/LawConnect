@@ -3,7 +3,6 @@ const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');
 const leftPanel = document.querySelector('.left-panel');
 const rightPanel = document.querySelector('.right-panel');
-
 signUpButton.addEventListener('click', () => {
   container.classList.add("right-panel-active");
 });
@@ -115,6 +114,7 @@ async function login() {
         localStorage.setItem('userData', JSON.stringify(res.userData));
         alert(res.msg);
         if (res.msg === "sucessfully Login!") {
+          
 
           if (res.role === "user") {
             window.location.href = "./HomePage.html"

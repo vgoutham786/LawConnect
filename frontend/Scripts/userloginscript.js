@@ -119,7 +119,7 @@ async function login() {
           if (res.role === "user") {
             window.location.href = "./HomePage.html"
           } else {
-            window.location.href = "../AdminPage/admin.html"
+            window.location.href = "./Lhomepage.html"
           }
 
         } else {

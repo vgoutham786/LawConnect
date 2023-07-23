@@ -153,14 +153,19 @@ signinRoute.post("/lawyer-login", async (req, res) => {
     let user = await LawyerModel.find({ email: email });
     try {
         if (user.length > 0) {
-            if (password === user[0].password) {
-                res.status(200).send({ msg: "Login sucessfull !", Name: user[0].name, userData: user[0] });
-            } else {
-                res.status(200).send({ msg: "wrong credentials !" });
-            }
-        } else {
-            res.status(404).send({ msg: "user doesn't exist !" })
-        }
+            bcrypt.compare(password, user[0].password, async (err, result) => {
+                if (err)
+                    throw err;
+                if (result) {
+                    res.status(200).send({ msg: "sucessfully Login!", name:user.Name,"token": jwt.sign({ 'userID': user[0]._id }, 'masai'), "Name": user[0].Name, "userData": user[0], "role": user[0].role })
+                } else {
+                    res.status(400).send({ msg: "Wrong credentials" })
+                }
+            })
+        } 
+     else {
+        res.status(400).send({ msg: "Registered First!" })
+    }
     } catch (error) {
         res.status(404).send({ msg: "Network Error !" });
     }

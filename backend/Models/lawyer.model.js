@@ -13,6 +13,7 @@ const schema = new mongoose.Schema({
   phone: Number,
   image: String,
   price: String,
+  verify: Boolean,
   languages: [String],
   rating: Number,
   experience: String,

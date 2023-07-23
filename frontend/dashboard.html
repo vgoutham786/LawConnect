@@ -547,7 +547,37 @@ p {
        
       <!-- chat box ends here -->
 </body>
+
+
 <script>
+  function savename() {
+  
+  window.location="./loginPage/loginPage.html"
+}
+
+// let logout = document.getElementById("logout");
+let profile = document.getElementById("profile");
+
+
+let fullname =JSON.parse(localStorage.getItem('userData')).Name || false
+profile.innerHTML = fullname || "My Profile";
+
+let signupdiv = document.getElementById("signup-logout-btn");
+!fullname
+  ? (signupdiv.innerHTML = `
+<button id="signup" class="signup"  onclick="savename()">Sign up</button>`)
+  : (signupdiv.innerHTML = `<button id="logout" onclick="logout()" class="signup" >Log Out</button>`);
+let logoutbtn = document.getElementById("logout");
+
+function logout() {
+
+  localStorage.removeItem("userData");
+  profile.innerHTML = "My Profile";
+  window.location.reload();
+}
+</script>
+<script>
+
 
 // Parse localStorage values
 let userdata = JSON.parse(localStorage.getItem('userData'));
@@ -555,10 +585,10 @@ let lawyer_local_data = JSON.parse(localStorage.getItem('Details'));
 
 let loged_in_user_data = JSON.parse(localStorage.getItem('userData')) || false
      
-     if(loged_in_user_data){
-       // document.getElementById("main_chat_container").style.display = "flex"
- logedIn()
-}
+//      if(loged_in_user_data){
+//        // document.getElementById("main_chat_container").style.display = "flex"
+//  logedIn()
+// }
 
 function logedIn(){
  document.getElementById("loged_in_name").textContent = loged_in_user_data.Name

@@ -239,5 +239,32 @@
 
 </body>
 <script src="./Scripts/appointment.js"></script>
+<script>
+  function savename() {
+  
+  window.location="./loginPage/loginPage.html"
+}
+
+// let logout = document.getElementById("logout");
+let profile = document.getElementById("profile");
+
+
+let fullname =JSON.parse(localStorage.getItem('userData')).Name || false
+profile.innerHTML = fullname || "My Profile";
+
+let signupdiv = document.getElementById("signup-logout-btn");
+!fullname
+  ? (signupdiv.innerHTML = `
+<button id="signup" class="signup"  onclick="savename()">Sign up</button>`)
+  : (signupdiv.innerHTML = `<button id="logout" onclick="logout()" class="signup" >Log Out</button>`);
+let logoutbtn = document.getElementById("logout");
+
+function logout() {
+
+  localStorage.removeItem("userData");
+  profile.innerHTML = "My Profile";
+  window.location.reload();
+}
+</script>
 
 </html>

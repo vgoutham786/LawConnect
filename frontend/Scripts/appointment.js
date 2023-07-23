@@ -1,4 +1,4 @@
-let lawyerData = 'http://localhost:8000/lawyer'
+let lawyerData = 'http://localhost:8080/lawyer'
 
 
 console.log(lawyerData)

@@ -1,4 +1,4 @@
-let baseurl = "http://localhost:8080";
+let baseurl = "https://law-connect.onrender.com";
 document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
     signup()

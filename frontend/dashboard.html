@@ -574,7 +574,7 @@
   }
 
   // Define API endpoint URL
-  let lawyerData = 'http://localhost:8080/appointment';
+  let lawyerData = 'https://law-connect.onrender.com/appointment';
 
   // Function to fetch data from the API
   function fetchData() {
@@ -894,8 +894,8 @@
   integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
 
 <script>
-  const PORT = "http://localhost:8080"
-  const socket = io("http://localhost:8080", { transports: ["websocket"] });
+  const PORT = "https://law-connect.onrender.com"
+  const socket = io("https://law-connect.onrender.com", { transports: ["websocket"] });
   const userChatEmail = JSON.parse(localStorage.getItem("userData")).email || false
   let myLawyerId = "";
   const display_box = document.getElementById("chat_box");

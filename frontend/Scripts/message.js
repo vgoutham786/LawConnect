@@ -2,7 +2,7 @@
 
 
 
-const socket = io("https://localhost:8080", { transports: ["websocket"] });
+const socket = io("https://law-connect.onrender.com", { transports: ["websocket"] });
 const userChatEmail = "user@example.com";
 let myLawyerId = "";
 const display_box = document.getElementById("chat_box");
@@ -90,7 +90,7 @@ socket.on("receiveMessage", (message) => {
 
 function updateChatBox(myLawyerId) {
     fetch(
-        `https://localhost:8080/myChat?lawyerId=${myLawyerId}&email=${userChatEmail}`
+        `https://law-connect.onrender.com/myChat?lawyerId=${myLawyerId}&email=${userChatEmail}`
     )
         .then((req) => req.json())
         .then((res) => appendChaBox(res));
